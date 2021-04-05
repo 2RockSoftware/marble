@@ -1,0 +1,18 @@
+{% extends 'cms/base.html' %}
+{% load static i18n wagtailcore_tags wagtailroutablepage_tags wagtailuserbar puput_tags %}
+{% load snippet_tags %}
+
+{% wagtailuserbar %}
+
+{% block title %}{{ blog_page.title | safe }}{% if blog_page.description %} | {{ blog_page.description | safe }}{% endif %}{% endblock title %}
+{% block extra_meta %}
+    <meta name="title" content="{% block meta_title %}{% if blog_page.seo_title %}{{ blog_page.seo_title }}{% else %}{{ blog_page.title }}{% endif %}{% endblock meta_title %}"/>
+{% endblock %}
+{% block meta_description %}{{ blog_page.search_description | safe }}{% endblock meta_description %}
+{% block canonical %}{% canonical_url %}{% endblock canonical %}
+
+
+{% block content %}
+    {{ blog_page }}
+{% endblock content%}
+
