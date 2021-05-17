@@ -76,14 +76,14 @@ class HomePage(Page):
 
     def get_context(self, request, *args, **kwargs):
         context = super(HomePage, self).get_context(request)
-        from puput.models import Blog
+        from puput.models import BlogPage
 
-        blog = Blog.objects.first()
+        blog = BlogPage.objects.first()
         blog_entries = blog.get_entries()
         context.update({
             "blog": blog,
             "blog_entries": blog_entries,
-            "contact_form": TwoRockContactForm(),
+            "contact_form": TwoRockContactForm(request=request),
         })
         return context
 
