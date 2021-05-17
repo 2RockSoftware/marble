@@ -32,6 +32,34 @@ INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.humanize',
     'django.contrib.sitemaps',
+
+    # internal apps
+    'marble.cms',
+
+    # third party apps
+    'wagtail.contrib.forms',
+    'wagtail.contrib.redirects',
+    'wagtail.embeds',
+    'wagtail.sites',
+    'wagtail.users',
+    'wagtail.snippets',
+    'wagtail.documents',
+    'wagtail.images',
+    'wagtail.search',
+    'wagtail.admin',
+    'wagtail.core',
+    'wagtail.contrib.sitemaps',
+    'wagtail.contrib.routable_page',
+
+    # blog
+    'django_social_share',
+    'puput',
+    'colorful',
+
+    'modelcluster',
+    'taggit',
+    'contact_form',
+    'captcha',
 ]
 
 MIDDLEWARE = [
@@ -43,6 +71,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'wagtail.contrib.redirects.middleware.RedirectMiddleware',
 ]
 
 
@@ -203,3 +232,10 @@ SECURE_CONTENT_TYPE_NOSNIFF = True
 SECURE_BROWSER_XSS_FILTER = True
 CSRF_COOKIE_HTTPONLY = True
 X_FRAME_OPTIONS = 'DENY'
+
+RECAPTCHA_REQUIRED_SCORE = 0.60  # let everything through
+
+SILENCED_SYSTEM_CHECKS = ['captcha.recaptcha_test_key_error']
+
+# Wagtail settings
+WAGTAIL_SITE_NAME = 'Two Rock Software'
