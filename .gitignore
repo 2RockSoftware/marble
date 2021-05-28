@@ -18,11 +18,11 @@ output.json
 htmlcov
 coverage.sh
 aoc/data/
-build
+
 backups
 iticket/local.py
 public/*
 .env
 .vscode
 *.log
-marble/static/build/*
+node_modules

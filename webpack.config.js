@@ -1,29 +1,21 @@
 const path = require("path");
-
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const KssWebpackPlugin = require('kss-webpack-plugin');
+
+const PROD = process.env.NODE_ENV == 'production';
+const BUILD_PATH = "./marble/static/build/";
+const STATIC_PATH = "https://" + process.env.AWS_S3_CUSTOM_DOMAIN + BUILD_PATH;
 
 module.exports = {
   plugins: [
     new MiniCssExtractPlugin(
       {filename: '[name].css', chunkFilename: '[id].css'}
-    ),
-    new KssWebpackPlugin({
-      source: './marble/static/scss',
-      destination: './marble/templates/styleguide/build',
-      title: 'Two Rock Software Style Guide',
-      builder: './src/theme',
-      homepage: './src/styleguide.md'
-    })
+    )
   ],
   entry: {
-    index: './src/index.js',
-    home: ['./src/home.js', './static/scss/home.scss'],
-    style: './marble/static/scss/cms.scss',
-    kss: './marble/static/scss/kss.scss'
+    index: ['./marble/src/marble.scss'],
   },
   output: {
-    path: path.resolve(__dirname, "marble/static/build")
+    path: path.resolve(__dirname, BUILD_PATH)
   },
   module: {
     rules: [
@@ -36,12 +28,13 @@ module.exports = {
         test: /\.(sa|sc|c)ss$/,
         use: [
           {
-            loader: MiniCssExtractPlugin.loader,
-            options: {
-              publicPath: '/static'
-            }
+            loader: MiniCssExtractPlugin.loader
           }, {
-            loader: 'css-loader'
+            loader: 'file-loader',
+            options: {
+              name: "[name].css",
+              publicPath: PROD ? STATIC_PATH : BUILD_PATH
+            }
           }, {
             loader: 'sass-loader'
           }
