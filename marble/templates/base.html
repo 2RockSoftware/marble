@@ -8,14 +8,21 @@
     <meta name="description" content="{% block meta-description %}{% endblock %}">
     <meta name="author" content="{% block meta-author %}{% endblock %}">
     <meta name="keywords" content="{% block meta-keywords %}{% endblock %}">
+
     {% block extra-meta %}{% endblock %}
     {% block extra-css %}{% endblock %}
+
+    <link rel="stylesheet" href="{% static 'build/marble.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@400;500;700&family=Alegreya:wght@400;500;600;700&display=swap" rel="stylesheet">
+
     <script src="{% static 'js/libs/modernizr.js' %}"></script>
 </head>
 <body>
     <div class="container">
         {% block content %}{% endblock %}
     </div>
+    
+    <script src="{% static 'build/index.js' %}"></script>
     {% block extra-js %}{% endblock %}
 </body>
 </html>

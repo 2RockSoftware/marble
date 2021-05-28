@@ -1,0 +1,28 @@
+// 
+// Two Rock Branding
+
+$marble-sans-serif: 'Alegreya Sans', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+$marble-serif: 'Alegreya', 'Georgia', 'Times New Roman', serif;
+
+$marble-gray: #6d6e6d;
+$marble-gray__light: #f4f4f4;
+$marble-yellow: #edc44f;
+$marble-brown: #726135;
+$marble-black: #000000;
+
+$marble-semi-bold: 500;
+$marble-bold: 700;
+
+$marble-branding: (
+  "yellow": $marble-yellow,
+  "brown": $marble-yellow,
+  "gray-light": $marble-gray__light,
+  "gray": $marble-gray,
+  "black": $marble-black
+);
+
+
+//
+// Bootstrap variables
+
+$font-family-sans-serif: $marble-sans-serif;

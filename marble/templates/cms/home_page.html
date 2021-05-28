@@ -1,5 +1,24 @@
 {% extends "cms/base.html" %}
 
 {% block content %}
-    {{ page.elevator_pitch | safe }}
+    <header class="marble-hero container">
+        <h1 class="col-4"><img src="src/Two-Rock-Software-Logo.svg" alt="Two Rock Software LLC Logo" class="marble-logo" /></h1>
+        <h2 class="marble-serif col-6">Custom Python Development Focused on Increasing Your Efficiency and Revenue</h2>
+    
+        <nav class="marble-hero-nav">
+            <a href="#">About</a>
+            <a href="#">Clients</a>
+            <a href="#">Blog</a>
+            <a href="#">The Quarry</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            {{ page.elevator_pitch | safe }}
+        </section>
+    </main>
+
+    <footer></footer>
 {% endblock %}
