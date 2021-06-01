@@ -1,9 +1,10 @@
 {% extends "cms/base.html" %}
+{% load static %}
 
 {% block content %}
-    <header class="marble-hero container">
-        <h1 class="col-4"><img src="src/Two-Rock-Software-Logo.svg" alt="Two Rock Software LLC Logo" class="marble-logo" /></h1>
-        <h2 class="marble-serif col-6">Custom Python Development Focused on Increasing Your Efficiency and Revenue</h2>
+    <header class="marble-hero">
+        <h1 class="col-4"><img src="{% static 'images/Two-Rock-Software-Logo.svg' %}" alt="Two Rock Software LLC Logo" class="marble-logo" /></h1>
+        <h2 class="col-6">Custom Python Development Focused on Increasing Your Efficiency and Revenue</h2>
     
         <nav class="marble-hero-nav">
             <a href="#">About</a>
@@ -13,12 +14,55 @@
             <a href="#">Contact</a>
         </nav>
     </header>
+    
+    <section class="marble-home-build">
+        <div class="container">
+            <h2>What We Build</h2>
+            <h3>Custom solutions that you can rely on</h3>
+        </div>
 
-    <main>
-        <section>
-            {{ page.elevator_pitch | safe }}
-        </section>
-    </main>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-6 marble-rock rock-A">
+                    <p>
+                        — Custom Case Management Apps<br />
+                        — Inventory Management and Compliance Software<br />
+                        — Trust Accounting Software
+                    </p>
+                </div>
+
+                <div class="col-sm-6 marble-rock rock-B">
+                    <p>
+                        — Survey Software<br />
+                        — Conversion-optimized, Custom Purchase Forms<br />
+                        — Custom Ad Delivery Solutions<br />
+                        — Custom Audio Archive Systems
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+   
+   
+    <section class="marble-home-how">
+        <div class="container">
+            <h2>How We Work</h2>
+            <h3>With partnerships that benefit every part of the project</h3>
+        </div>
+
+         <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-6 marble-rock rock-C">
+                    <p>
+                        — You have direct contact with our developers.<br />
+                        — Our project managers are developers, too.<br />
+                        — We value diversity in our team and in their talents.<br />
+                        — Every project gets a marketing review to be sure the development plans align with your business goals.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <footer></footer>
 {% endblock %}
