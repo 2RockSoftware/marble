@@ -49,19 +49,55 @@ li {
 }
 
 .marble-footer {
-  padding: 3rem var(--gutter);
+  padding: 0 var(--gutter) 2rem var(--gutter);
   background-color: $marble-gray__dark;
+  align-items: center;
+
+  h2 {
+    font-size: 1.75rem;
+    margin: 1.5rem 0;
+    text-align: center;
+
+    @include media-breakpoint-up(lg) {
+      font-size: 2.25rem;
+      text-align: left;
+    }
+  }
+
+  .marble-rock {
+    text-decoration: none;
+    color: $marble-gray__dark;
+    padding: 3rem 2rem;
+    font-size: 1.15rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
 
   img {
     filter: invert(1);
     max-width: 14rem;
   }
 
+  ul a { 
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+    letter-spacing: 1px;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+  }
 
-  @include media-breakpoint-up(md) {
-    img, 
-    p {
+  img, 
+  p {
+    padding: 2rem 0;
+
+    @include media-breakpoint-up(md) {
       width: 25%;
+    }
+
+    @include media-breakpoint-up(lg) {
+      width: 20%;
     }
   }
 }

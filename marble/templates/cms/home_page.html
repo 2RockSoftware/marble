@@ -1,13 +1,20 @@
 {% extends "cms/base.html" %}
 {% load static %}
+{% load wagtailcore_tags %}
 
 {% block content %}
     <header class="marble-hero">
         <h1 class="col-sm-4"><img src="{% static 'images/Two-Rock-Software-Logo.svg' %}" alt="Two Rock Software LLC Logo" class="marble-hero-logo" /></h1>
-        <h2 class="col-sm-6">Custom Python Development Focused on Increasing Your Efficiency and Revenue</h2>
-    
+       
+       {% if page.elevator_pitch %}
+            <h2 class="col-sm-6">
+                {{ page.elevator_pitch | safe }}
+            </h2>
+        {% endif %}
+
         <nav class="marble-hero-nav">
             <a href="#">About</a>
+            <a href="#" style="background-image: url('{% static 'backgrounds/rock-nav-0.svg' %}');">Clients</a>
             <a href="#" style="background-image: url('{% static 'backgrounds/rock-nav-1.svg' %}');">Clients</a>
             <a href="#" style="background-image: url('{% static 'backgrounds/rock-nav-2.svg' %}');">Blog</a>
             <a href="#" style="background-image: url('{% static 'backgrounds/rock-nav-3.svg' %}');">The Quarry</a>
@@ -15,55 +22,39 @@
         </nav>
     </header>
     
+    {% if page.what_we_build_section %}
     <section class="marble-home-build">
-        <div class="container">
-            <h2>What We Build</h2>
-            <h3>Custom solutions that you can rely on</h3>
-   
-            <div class="row marble-rock-row">
-                <div class="col-lg-6 marble-rock" style="background-image: url('{% static 'backgrounds/rock-home-0.svg' %}');">
-                    <ul>
-                        <li>Custom Case Management Apps</li>
-                        <li>Inventory Management and Compliance Software</li>
-                        <li>Trust Accounting Software</li>
-                    </ul>
-                </div>
-
-                <div class="col-lg-6 marble-rock" style="background-image: url('{% static 'backgrounds/rock-home-1.svg' %}');">
-                    <ul>
-                        <li>Survey Software</li>
-                        <li>Conversion-optimized, Custom Purchase Forms</li>
-                        <li>Custom Ad Delivery Solutions</li>
-                        <li>Custom Audio Archive Systems</li>
-                    </ul>
-                </div>
-            </div>
+        <div class="container"> 
+            {% for block in page.what_we_build_section %}
+                {% if block.block_type == 'heading' %}
+                    <h2>{{ block.value }}</h2>
+                {% elif block.block_type == 'subheading' %}
+                    <h3>{{ block.value }}</h3>
+                {% else %}
+                    {% include_block block %}
+                {% endif %}
+            {% endfor %}
         </div>
     </section>
+    {% endif %}
    
-   
+    {% if page.how_we_work_section %}
     <section class="marble-home-how">
         <div class="container">
-            <h2>How We Work</h2>
-            <h3>With partnerships that benefit every part of the project</h3>
-
-            <div class="row marble-rock-row">
-                <div class="col-lg-8 marble-rock" style="background-image: url('{% static 'backgrounds/rock-home-2.svg' %}');">
-                    <ul>
-                        <li>You have direct contact with our developers.</li>
-                        <li>Our project managers are developers, too.</li>
-                        <li>We value diversity in our team and in their talents.</li>
-                        <li>Every project gets a marketing review to be sure the development plans align with your business goals.</li>
-                    </ul>
-                </div>
-
-                <div class="col-lg-4 d-flex justify-content-center align-items-center">
-                    <a href="#" class="btn btn-outline-primary">Ready to start?</a>
-                </div>
-            </div>
+            {% for block in page.how_we_work_section %}
+                {% if block.block_type == 'heading' %}
+                    <h2>{{ block.value }}</h2>
+                {% elif block.block_type == 'subheading' %}
+                    <h3>{{ block.value }}</h3>
+                {% else %}
+                    {% include_block block %}
+                {% endif %}
+            {% endfor %}
         </div>
     </section>
+    {% endif %}
 
+    {% if page.about_us_section %}
     <img srcset="{% static 'backgrounds/home-about-rocks.png' %} 1000w,
                 {% static 'backgrounds/home-about-rocks@2x.png' %} 2000w"
         src="{% static 'backgrounds/home-about-rocks.png' %}" 
@@ -74,30 +65,53 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-10">
-                    <h2 class="text-brown">Two Rock Software is a natural evolution</h2>
+                {% for block in page.about_us_section %}
+                    {% if block.block_type == 'heading' %}
+                        <h2 class="text-brown">{{ block.value }}</h2>
+                    {% else %}
+                        {% include_block block %}
+                    {% endif %}
+                {% endfor %}
 
-                    <p>Two Rock Software is a natural evolution of the collaboration that began in 2012. Our founders began working together on a custom case management app for a small law firm in Chapel Hill, North Carolina. 
-                    Both were already using Django and loved doing Python development.</p>
-
-                    <p>After years of working together in various capacities on several different projects, 
-                    they decided to found a new company together. The name comes from the fact that each of our founders have a name that means rock: Peter and Rocha.</p>
+                -- Insert snippets --
                 </div>
             </div>
         </div>
     </section>
+    {% endif %}
 
+    <img srcset="{% static 'backgrounds/home-footer-start.jpg' %} 1000w,
+                {% static 'backgrounds/home-footer-start@2x.jpg' %} 2000w"
+        src="{% static 'backgrounds/home-footer-start.jpg' %}" 
+        sizes="(max-width: 960px) 1000px, 2000px"
+        class="marble-rock-wide" />
 
     <footer class="marble-footer">
-        <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
-            <img src="{% static 'images/Two-Rock-Software-Logo.svg' %}" alt="Two Rock Software LLC Logo" />
+        <div class="container">
+            <div class="row justify-content-center align-items-center pb-5">
+                <div class="col-12 col-md-8">
+                    <h2 class="text-white">What do you want to build?</h2>
+                </div>
 
-            <ul class="text-white">
-                <li><a href="#">Find us on Github</a></li>
-                <li><a href="#">Contact</a></li>
-                <li><a href="#">Careers</a></li>
-            </ul>
+                <div class="col-6 col-md-4">
+                    <a href="#" style="background-image: url('{% static 'backgrounds/rock-nav-0.svg' %}');" class="marble-rock">
+                        Contact Us
+                    </a>
+                </div>
+            </div>
 
-            <p class="marble-serif text-md-end fw-bold text-white">Team-based on the East Coast, USA</p>
+
+            <div class="d-flex flex-column flex-md-row justify-content-between align-items-center">
+                <img src="{% static 'images/Two-Rock-Software-Logo.svg' %}" alt="Two Rock Software LLC Logo" />
+
+                <ul class="text-white">
+                    <li><a href="#">Find us on Github</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Careers</a></li>
+                </ul>
+
+                <p class="marble-serif text-md-end fw-bold text-white">Team-based on the East Coast, USA</p>
+            </div>
         </div>
     </footer>
 {% endblock %}
