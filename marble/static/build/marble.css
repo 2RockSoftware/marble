@@ -7211,6 +7211,34 @@ h3, .h3 {
   width: 100%;
 }
 
+.marble-team-member {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+.marble-team-member h3, .marble-team-member .h3 {
+  font-family: "Alegreya", "Georgia", "Times New Roman", serif;
+  margin: 0;
+  font-weight: 700;
+}
+.marble-team-member h4, .marble-team-member .h4 {
+  font-weight: 400;
+  margin-bottom: 1rem;
+}
+.marble-team-member img {
+  width: 100%;
+  margin-bottom: 2rem;
+}
+.marble-team-member p {
+  line-height: 1.75;
+}
+
+.marble-team-member.is-founder h3, .marble-team-member.is-founder .h3 {
+  font-size: 1.75rem;
+}
+.marble-team-member.is-founder h4, .marble-team-member.is-founder .h4 {
+  font-size: 1.5rem;
+}
+
 .btn {
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -7336,10 +7364,5 @@ h3, .h3 {
   .marble-home-about h2, .marble-home-about .h2 {
     padding-right: 6rem;
     font-size: 3.5rem;
-  }
-}
-@media (min-width: 1480px) {
-  .marble-home-about p {
-    padding-right: 12rem;
   }
 }

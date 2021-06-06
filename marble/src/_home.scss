@@ -123,9 +123,9 @@
     } 
   }
 
-  p {
-    @include media-breakpoint-up(lg) {
-      padding-right: 12rem;
-    }
-  }
+  // p {
+  //   @include media-breakpoint-up(lg) {
+  //     padding-right: 12rem;
+  //   }
+  // }
 }

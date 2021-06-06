@@ -132,7 +132,43 @@ li {
 }
 
 
+// 
+// Team 
 
+.marble-team-member {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+
+  h3 {
+    font-family: $marble-serif;
+    margin: 0;
+    font-weight: 700;
+  }
+
+  h4 {
+    font-weight: 400;
+    margin-bottom: 1rem;
+  }
+
+  img {
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+
+  p {
+    line-height: 1.75;
+  }
+}
+
+.marble-team-member.is-founder {
+  h3 {
+    font-size: 1.75rem;
+  }
+
+  h4 {
+    font-size: 1.5rem;
+  }
+}
 
 // 
 // Buttons 
