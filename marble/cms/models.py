@@ -7,49 +7,10 @@ from wagtail.core import blocks
 from wagtail.core.models import Page
 from wagtail.core.fields import StreamField
 from wagtail.images.blocks import ImageChooserBlock
-from wagtail.images.edit_handlers import ImageChooserPanel
-from wagtail.snippets.models import register_snippet
 from wagtail.snippets.edit_handlers import SnippetChooserPanel
-from wagtail.snippets.blocks import SnippetChooserBlock
-
-from puput.utils import get_image_model_path
 
 from marble.cms.blocks import FounderBlock, DeveloperBlock, ProjectBlock, ClientsLogos
 from marble.cms.forms import TwoRockContactForm
-
-
-@register_snippet
-class TeamMember(models.Model):
-    full_name = models.CharField(max_length=50)
-    role = models.CharField(max_length=100)
-
-    avatar = models.ForeignKey(
-        get_image_model_path(),
-        verbose_name=_('Team Member Image'),
-        null=True,
-        blank=True,
-        on_delete=models.SET_NULL,
-        related_name='team_member_images'
-    )
-
-    panels = [
-        FieldPanel("full_name"),
-        ImageChooserPanel("avatar"),
-        FieldPanel("role"),
-    ]
-
-    def __str__(self):
-        return self.full_name
-
-
-class TeamMemberChooser(blocks.StructBlock):
-    person = SnippetChooserBlock(TeamMember)
-
-    def __str__(self):
-        return self.person
-
-    class Meta:
-        template = "cms/blocks/team_member.html"
 
 
 class HomePage(Page):
@@ -85,8 +46,6 @@ class HomePage(Page):
         null=True,
     )
 
-    team = models.ForeignKey("TeamMember", null=True, blank=True, on_delete=models.SET_NULL)
-
     clients_section = StreamField(
         [
             ("heading", blocks.CharBlock(classname="full")),
@@ -115,7 +74,6 @@ class HomePage(Page):
         StreamFieldPanel('what_we_build_section', classname="full"),
         StreamFieldPanel('how_we_work_section', classname="full"),
         StreamFieldPanel('about_us_section', classname="full"),
-        SnippetChooserPanel("team", classname="full"),
         StreamFieldPanel('clients_section', classname="full"),
         StreamFieldPanel('the_quarry_section', classname="full"),
     ]
