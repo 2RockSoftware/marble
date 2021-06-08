@@ -3,17 +3,6 @@
 @import 'variables';
 @import 'bootstrap-includes';
 
-// 
-// Utilities 
-
-.marble-serif {
-  font-family: $marble-serif;
-}
-
-.marble-sans-serif {
-  font-family: $marble-sans-serif;
-}
-
 
 //
 // Styles
@@ -23,38 +12,174 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+:root {
+  --gutter: 1rem;
 
-.marble-hero {
-  min-height: 700px;
-  min-height: 75vh;
-  display: flex;
-  padding: 2rem 1rem;
-  flex-flow: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  background-image: url('src/home-rocks-1.png');
-  background-position: top right;
-  background-repeat: no-repeat;
-  background-color: $marble-yellow;
-}
+  @include media-breakpoint-up(sm) {
+    font-size: ($font-size-root * 1.10);
+  }
 
-.marble-hero-nav {
-  display: flex;
-  padding: 2rem 0;
-
-  a {
-    text-transform: uppercase;
-    text-decoration: none;
-    font-weight: $marble-bold;
-    color: $marble-gray;
-    margin: 1rem 1.5rem;
-    letter-spacing: 0.02rem;
-    font-size: 1.25rem;
+  @include media-breakpoint-up(lg) {
+    --gutter: 2rem;
+    font-size: ($font-size-root * 1.15);
+  } 
+  
+  @include media-breakpoint-up(xl) {
+    font-size: ($font-size-root * 1.35);
   }
 }
 
-.marble-logo {
-  margin: 2rem 0;
+body {
+  background-color: $marble-gray__light;
+  font-size: inherit;
+}
+
+li {
+  line-height: 1.15;
+  margin: 0.75rem 0;
+  list-style: none;
+  font-weight: 500;
+
+  &:before {
+    content: "—";
+    display: inline-block; 
+    width: 1em; 
+    margin-right: 0.25rem;
+  }
+}
+
+.marble-footer {
+  padding: 0 var(--gutter) 2rem var(--gutter);
+  background-color: $marble-gray__dark;
+  align-items: center;
+
+  h2 {
+    font-size: 1.75rem;
+    margin: 1.5rem 0;
+    text-align: center;
+
+    @include media-breakpoint-up(lg) {
+      font-size: 2.25rem;
+      text-align: left;
+    }
+  }
+
+  .marble-rock {
+    text-decoration: none;
+    color: $marble-gray__dark;
+    padding: 3rem 2rem;
+    font-size: 1.15rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  img {
+    filter: invert(1);
+    max-width: 14rem;
+  }
+
+  ul a { 
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+    letter-spacing: 1px;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+  }
+
+  img, 
+  p {
+    padding: 2rem 0;
+
+    @include media-breakpoint-up(md) {
+      width: 25%;
+    }
+
+    @include media-breakpoint-up(lg) {
+      width: 20%;
+    }
+  }
+}
+
+
+@import 'typography';
+
+// 
+// Components 
+
+.marble-rock {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+
+  ul {
+    padding: 0 10%;
+  }
+}
+
+.marble-rock-row {
+  @include media-breakpoint-up(lg) {
+    margin: 0 -3rem;
+  }
+}
+
+.marble-rock-wide {
   width: 100%;
 }
+
+
+// 
+// Team 
+
+.marble-team-member {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+
+  h3 {
+    font-family: $marble-serif;
+    margin: 0;
+    font-weight: 700;
+  }
+
+  h4 {
+    font-weight: 400;
+    margin-bottom: 1rem;
+  }
+
+  img {
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+
+  p {
+    line-height: 1.75;
+  }
+}
+
+.marble-team-member.is-founder {
+  h3 {
+    font-size: 1.75rem;
+  }
+
+  h4 {
+    font-size: 1.5rem;
+  }
+}
+
+// 
+// Buttons 
+
+.btn {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.btn-outline-primary {
+  color: $marble-brown;
+}
+
+@import 'home';

@@ -20,7 +20,7 @@
   "author": "",
   "license": "BSD",
   "dependencies": {
-    "bootstrap": "^5.0.0-beta3",
+    "bootstrap": "^5.0.1",
     "css-loader": "^5.0.1",
     "eslint": "^2.10.2",
     "file-loader": "^6.2.0",

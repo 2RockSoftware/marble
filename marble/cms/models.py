@@ -1,10 +1,13 @@
 from django.db import models
 
+from django.utils.translation import gettext as _
+
 from wagtail.admin.edit_handlers import FieldPanel, StreamFieldPanel
 from wagtail.core import blocks
 from wagtail.core.models import Page
 from wagtail.core.fields import StreamField
 from wagtail.images.blocks import ImageChooserBlock
+from wagtail.snippets.edit_handlers import SnippetChooserPanel
 
 from marble.cms.blocks import FounderBlock, DeveloperBlock, ProjectBlock, ClientsLogos
 from marble.cms.forms import TwoRockContactForm
@@ -35,6 +38,7 @@ class HomePage(Page):
         [
             ("heading", blocks.CharBlock(classname="full")),
             ("subheading", blocks.CharBlock(classname="full")),
+            ("description", blocks.RawHTMLBlock(icon="code", label="Raw HTML")),
             ("founder", FounderBlock(classname="full")),
             ("developer", DeveloperBlock(classname="full")),
         ],
@@ -100,6 +104,6 @@ class ContactPage(TwoRockPage):
     def get_context(self, request, *args, **kwargs):
         context = super(ContactPage, self).get_context(request)
         context.update({
-            "contact_form": TwoRockContactForm(),
+            "contact_form": TwoRockContactForm(request=request),
         })
         return context
