@@ -42,7 +42,6 @@ class TeamMember(models.Model):
         return self.full_name
 
 
-
 class TeamMemberChooser(blocks.StructBlock):
     person = SnippetChooserBlock(TeamMember)
 
@@ -147,6 +146,6 @@ class ContactPage(TwoRockPage):
     def get_context(self, request, *args, **kwargs):
         context = super(ContactPage, self).get_context(request)
         context.update({
-            "contact_form": TwoRockContactForm(),
+            "contact_form": TwoRockContactForm(request=request),
         })
         return context
