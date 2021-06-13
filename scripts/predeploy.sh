@@ -19,3 +19,6 @@ set -ex
 
 # NOTE: the buildpack should already have installed our node packages
 #npm run build
+
+# Run migrations
+python manage.py migrate --noinput
