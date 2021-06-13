@@ -2,7 +2,7 @@
 
 # Settings for live deployed environments: vagrant, staging, production, etc
 import os
-j
+
 from socket import gethostname, gethostbyname
 
 from .base import *  # noqa
