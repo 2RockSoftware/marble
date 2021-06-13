@@ -101,6 +101,8 @@ SESSION_COOKIE_HTTPONLY = True
 
 ALLOWED_HOSTS = [
     "172.17.0.*",
+    gethostname(),
+    gethostbyname(gethostname()),
     os.environ['DOMAIN']
 ]
 
