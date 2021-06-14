@@ -47,6 +47,19 @@ You should now be able to run the development server::
 
   python manage.py runserver
 
+
+Wagtail
+-------
+
+Create a superuser 
+
+  python manage.py createsuperuser 
+
+Log into the Wagtail admin and set up a site 
+
+  http://localhost:8000/admin/wagtail 
+
+  
 Testing
 --------
 
