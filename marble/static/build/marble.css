@@ -578,14 +578,14 @@ progress {
     max-width: 540px;
   }
 }
-@media (min-width: 960px) {
+@media (min-width: 980px) {
   .container-md, .container-sm, .container {
-    max-width: 720px;
+    max-width: 960px;
   }
 }
-@media (min-width: 1480px) {
+@media (min-width: 1440px) {
   .container-lg, .container-md, .container-sm, .container {
-    max-width: 960px;
+    max-width: 1200px;
   }
 }
 @media (min-width: 2000px) {
@@ -1037,7 +1037,7 @@ progress {
     --bs-gutter-y: 3rem;
   }
 }
-@media (min-width: 960px) {
+@media (min-width: 980px) {
   .col-md {
     flex: 1 0 0%;
   }
@@ -1250,7 +1250,7 @@ progress {
     --bs-gutter-y: 3rem;
   }
 }
-@media (min-width: 1480px) {
+@media (min-width: 1440px) {
   .col-lg {
     flex: 1 0 0%;
   }
@@ -4409,7 +4409,7 @@ progress {
     text-align: center !important;
   }
 }
-@media (min-width: 960px) {
+@media (min-width: 980px) {
   .float-md-start {
     float: left !important;
   }
@@ -5060,7 +5060,7 @@ progress {
     text-align: center !important;
   }
 }
-@media (min-width: 1480px) {
+@media (min-width: 1440px) {
   .float-lg-start {
     float: left !important;
   }
@@ -7084,7 +7084,7 @@ progress {
     font-size: 19.8px;
   }
 }
-@media (min-width: 1480px) {
+@media (min-width: 1440px) {
   :root {
     --gutter: 2rem;
     font-size: 20.7px;
@@ -7124,7 +7124,7 @@ li:before {
   margin: 1.5rem 0;
   text-align: center;
 }
-@media (min-width: 1480px) {
+@media (min-width: 1440px) {
   .marble-footer h2, .marble-footer .h2 {
     font-size: 2.25rem;
     text-align: left;
@@ -7155,13 +7155,13 @@ li:before {
 .marble-footer p {
   padding: 2rem 0;
 }
-@media (min-width: 960px) {
+@media (min-width: 980px) {
   .marble-footer img,
 .marble-footer p {
     width: 25%;
   }
 }
-@media (min-width: 1480px) {
+@media (min-width: 1440px) {
   .marble-footer img,
 .marble-footer p {
     width: 20%;
@@ -7201,7 +7201,7 @@ h3, .h3 {
   padding: 0 10%;
 }
 
-@media (min-width: 1480px) {
+@media (min-width: 2000px) {
   .marble-rock-row {
     margin: 0 -3rem;
   }
@@ -7267,6 +7267,11 @@ h3, .h3 {
     padding: 2rem 1rem 20rem 1rem;
   }
 }
+@media (min-width: 980px) {
+  .marble-hero {
+    padding: 3rem 1rem 30rem 1rem;
+  }
+}
 @media (min-width: 2000px) {
   .marble-hero {
     height: 70rem;
@@ -7280,9 +7285,19 @@ h3, .h3 {
   }
 }
 .marble-hero h2, .marble-hero .h2 {
-  font-size: 2.15rem;
   margin: 1rem 0;
-  max-width: 42rem;
+  font-size: 1.5rem;
+}
+@media (min-width: 760px) {
+  .marble-hero h2, .marble-hero .h2 {
+    font-size: 2.15rem;
+  }
+}
+@media (min-width: 2000px) {
+  .marble-hero h2, .marble-hero .h2 {
+    max-width: 48rem;
+    font-size: 2.35rem;
+  }
 }
 
 .marble-hero-nav {
@@ -7311,6 +7326,7 @@ h3, .h3 {
 .marble-hero-logo {
   margin: var(--gutter) 0;
   max-width: 24rem;
+  width: 100%;
 }
 
 .marble-home-build {
@@ -7335,7 +7351,7 @@ h3, .h3 {
     min-height: 20rem;
   }
 }
-@media (min-width: 1480px) {
+@media (min-width: 2000px) {
   .marble-home-build .marble-rock-row {
     margin: 0 -8rem;
   }
@@ -7347,7 +7363,7 @@ h3, .h3 {
 .marble-home-how .marble-rock {
   padding: 3rem;
 }
-@media (min-width: 1480px) {
+@media (min-width: 1440px) {
   .marble-home-how .marble-rock {
     padding: 4rem 1rem 3rem 3rem;
   }
@@ -7360,7 +7376,7 @@ h3, .h3 {
   line-height: 1;
   margin-bottom: 1rem;
 }
-@media (min-width: 1480px) {
+@media (min-width: 1440px) {
   .marble-home-about h2, .marble-home-about .h2 {
     padding-right: 6rem;
     font-size: 3.5rem;

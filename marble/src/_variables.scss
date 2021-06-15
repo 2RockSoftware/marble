@@ -47,8 +47,16 @@ $btn-padding-y:             0.85rem;
 $grid-breakpoints: (
   xs: 0,
   sm: 760px,
-  md: 960px,
-  lg: 1480px,
+  md: 980px,
+  lg: 1440px,
   xl: 2000px,
   xxl: 2600px
+);
+
+$container-max-widths: (
+  sm: 540px,
+  md: 960px,
+  lg: 1200px,
+  xl: 1140px,
+  xxl: 1320px
 );

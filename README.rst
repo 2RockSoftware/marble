@@ -47,7 +47,12 @@ You should now be able to run the development server::
 
   python manage.py runserver
 
+Compile front-end 
 
+  npm install 
+  npm run dev 
+
+  
 Wagtail
 -------
 
@@ -59,7 +64,7 @@ Log into the Wagtail admin and set up a site
 
   http://localhost:8000/admin/wagtail 
 
-  
+
 Testing
 --------
 
