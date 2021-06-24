@@ -16,8 +16,12 @@
 h2 {
   margin-bottom: 0;
   font-weight: bold;
-  font-size: 3rem;
   font-family: $marble-serif;
+  font-size: 2rem;
+
+  @include media-breakpoint-up(sm) {
+    font-size: 3rem;
+  }
 }
 
 h3 {
