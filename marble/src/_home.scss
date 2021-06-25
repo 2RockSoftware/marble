@@ -9,20 +9,24 @@
   text-align: center;
   padding: 4rem var(--gutter) 12rem var(--gutter);
   height: auto;
+  overflow-x: hidden;
   background-position: bottom;
   background-repeat: no-repeat;
   background-size: cover;
-  background-image: url('/static/backgrounds/home-hero-rocks.png');
+  background-image: url('/static/backgrounds/home-hero-rocks.jpg');
   
   @include media-breakpoint-up(sm) {
     height: 60rem;
     padding: 2rem 1rem 20rem 1rem;
   }
   
+  @include media-breakpoint-up(md) {
+    padding: 3rem 1rem 30rem 1rem;
+  }  
+
   @include media-breakpoint-up(xl) {
     height: 70rem;
     padding: 2rem 1rem 30rem 1rem;
-    background-image: url('/static/backgrounds/home-hero-rocks@2x.png');
   }
 
   @include media-breakpoint-up(xxl) {
@@ -30,9 +34,17 @@
   }
 
   h2 {
-    font-size: 2.15rem;
     margin: 1rem 0;
-    max-width: 42rem;
+    font-size: 1.5rem;
+
+    @include media-breakpoint-up(sm) {
+      font-size: 2.15rem;
+    }
+
+    @include media-breakpoint-up(xl) {
+      max-width: 48rem;
+      font-size: 2.35rem;
+    }
   }
 }
 
@@ -63,7 +75,8 @@
 
 .marble-hero-logo {
   margin: var(--gutter) 0;
-  max-width: 24rem;
+  padding: 0 10%;
+  max-width: 100%;
 }
 
 
@@ -80,7 +93,11 @@
 
   h2,
   h3 {
-    text-align: right;
+    text-align: center;
+
+    @include media-breakpoint-up(sm) {
+      text-align: right;
+    }
   }
   
   .marble-rock {
@@ -91,7 +108,7 @@
     }
   }
   
-  @include media-breakpoint-up(lg) {
+  @include media-breakpoint-up(xl) {
     .marble-rock-row {
       margin: 0 -8rem;
     }
@@ -123,9 +140,4 @@
     } 
   }
 
-  // p {
-  //   @include media-breakpoint-up(lg) {
-  //     padding-right: 12rem;
-  //   }
-  // }
 }
