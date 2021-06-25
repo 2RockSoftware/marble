@@ -7071,6 +7071,95 @@ progress {
     display: none !important;
   }
 }
+.clearfix::after {
+  display: block;
+  clear: both;
+  content: "";
+}
+
+.link-primary {
+  color: #edc44f;
+}
+.link-primary:hover, .link-primary:focus {
+  color: #f1d072;
+}
+
+.link-secondary {
+  color: #6c757d;
+}
+.link-secondary:hover, .link-secondary:focus {
+  color: #565e64;
+}
+
+.link-yellow {
+  color: #edc44f;
+}
+.link-yellow:hover, .link-yellow:focus {
+  color: #f1d072;
+}
+
+.link-brown {
+  color: #726135;
+}
+.link-brown:hover, .link-brown:focus {
+  color: #5b4e2a;
+}
+
+.link-green {
+  color: #357566;
+}
+.link-green:hover, .link-green:focus {
+  color: #2a5e52;
+}
+
+.link-purple {
+  color: #4c2758;
+}
+.link-purple:hover, .link-purple:focus {
+  color: #3d1f46;
+}
+
+.link-gray-light {
+  color: #f4f4f4;
+}
+.link-gray-light:hover, .link-gray-light:focus {
+  color: #f6f6f6;
+}
+
+.link-gray {
+  color: #6d6e6d;
+}
+.link-gray:hover, .link-gray:focus {
+  color: #575857;
+}
+
+.link-gray-dark {
+  color: #656565;
+}
+.link-gray-dark:hover, .link-gray-dark:focus {
+  color: #515151;
+}
+
+.link-black {
+  color: #000000;
+}
+.link-black:hover, .link-black:focus {
+  color: black;
+}
+
+.visually-hidden,
+.visually-hidden-focusable:not(:focus):not(:focus-within) {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
 * {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -7125,7 +7214,7 @@ li {
 }
 
 .marble-footer {
-  padding: 0 var(--gutter) 2rem var(--gutter);
+  padding: 2rem var(--gutter);
   background-color: #656565;
   align-items: center;
 }
@@ -7151,7 +7240,7 @@ li {
 }
 .marble-footer img {
   filter: invert(1);
-  max-width: 14rem;
+  max-width: 10rem;
 }
 .marble-footer ul a {
   color: white;
@@ -7161,21 +7250,24 @@ li {
   font-size: 0.75rem;
   text-transform: uppercase;
 }
-.marble-footer img,
+.marble-footer .marble-footer-logo,
 .marble-footer p {
   padding: 2rem 0;
 }
 @media (min-width: 980px) {
-  .marble-footer img,
+  .marble-footer .marble-footer-logo,
 .marble-footer p {
     width: 25%;
   }
 }
 @media (min-width: 1440px) {
-  .marble-footer img,
+  .marble-footer .marble-footer-logo,
 .marble-footer p {
     width: 20%;
   }
+}
+.marble-footer + .marble-footer {
+  padding-top: 0;
 }
 
 .marble-serif {
@@ -7402,5 +7494,80 @@ h3, .h3 {
   .marble-home-about h2, .marble-home-about .h2 {
     padding-right: 6rem;
     font-size: 3.5rem;
+  }
+}
+
+.marble-contact-nav {
+  padding: 0 2rem;
+  display: block;
+}
+.marble-contact-nav img {
+  filter: invert(1);
+  width: 5rem;
+}
+@media (min-width: 980px) {
+  .marble-contact-nav img {
+    width: 8rem;
+  }
+}
+
+.marble-contact {
+  padding: 2rem 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url("/static/backgrounds/contact-texture.jpg");
+}
+@media (min-width: 980px) {
+  .marble-contact {
+    background-position: bottom;
+    background-image: url("/static/backgrounds/contact-texture@2x.jpg");
+  }
+}
+.marble-contact h1, .marble-contact .h1 {
+  font-family: "Alegreya", "Georgia", "Times New Roman", serif;
+  color: #726135;
+  font-weight: bold;
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+@media (min-width: 980px) {
+  .marble-contact h1, .marble-contact .h1 {
+    font-size: 3.5rem;
+    text-align: right;
+  }
+}
+@media (min-width: 980px) {
+  .marble-contact .marble-rock {
+    position: relative;
+    left: -3rem;
+  }
+}
+
+.marble-contact-form {
+  margin: 1rem 0;
+}
+.marble-contact-form .form-control {
+  width: 100%;
+  padding: 10px 15px;
+  box-shadow: inset 0px 0px 6px 2px rgba(114, 97, 53, 0.3);
+  border: solid 2px rgba(114, 97, 53, 0.69);
+}
+@media (min-width: 980px) {
+  .marble-contact-form {
+    position: relative;
+    top: -5rem;
+  }
+}
+
+.marble-contact-content {
+  color: white;
+  font-weight: 500;
+  margin: 0;
+  padding: 4rem 4rem 3rem 4rem;
+}
+@media (min-width: 980px) {
+  .marble-contact-content {
+    padding: 5rem 4rem 4rem 4rem;
   }
 }

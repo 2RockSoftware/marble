@@ -17,7 +17,7 @@
             {% comment %} <a href="#" style="background-image: url('{% static 'backgrounds/rock-nav-1.svg' %}');">Clients</a> {% endcomment %}
             {% comment %} <a href="#" style="background-image: url('{% static 'backgrounds/rock-nav-2.svg' %}');">Blog</a> {% endcomment %}
             {% comment %} <a href="#" style="background-image: url('{% static 'backgrounds/rock-nav-3.svg' %}');">The Quarry</a> {% endcomment %}
-            <a href="#" style="background-image: url('{% static 'backgrounds/rock-nav-4.svg' %}');">Contact</a>
+            <a href="/contact-us" style="background-image: url('{% static 'backgrounds/rock-nav-4.svg' %}');">Contact</a>
         </nav>
     </header>
     
@@ -60,7 +60,7 @@
         sizes="(max-width: 960px) 1000px, 2000px"
         class="marble-rock-wide"/>
 
-    <section class="marble-home-about" id="about" >
+    <section class="marble-home-about" id="about">
         <div class="container">
             <div class="row pb-5">
                 <div class="col-sm-10">
@@ -102,4 +102,26 @@
         </div>
     </section>
     {% endif %}
+
+    <img srcset="{% static 'backgrounds/home-footer-start.jpg' %} 1000w,
+                {% static 'backgrounds/home-footer-start@2x.jpg' %} 2000w"
+        src="{% static 'backgrounds/home-footer-start.jpg' %}" 
+        sizes="(max-width: 960px) 1000px, 2000px"
+        class="marble-rock-wide" />
+
+    <footer class="marble-footer">
+        <div class="container">
+            <div class="row justify-content-center align-items-center pb-5">
+                <div class="col-12 col-md-8">
+                    <h2 class="text-white">What do you want to build?</h2>
+                </div>
+
+                <div class="col-8 col-md-4">
+                    <a href="/contact-us" style="background-image: url('{% static 'backgrounds/rock-nav-0.svg' %}');" class="marble-rock">
+                        Contact Us
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
 {% endblock %}

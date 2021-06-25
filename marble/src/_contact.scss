@@ -1,0 +1,76 @@
+// 
+// Contact form 
+
+.marble-contact-nav {
+    padding: 0 2rem;
+    display: block;
+
+    img {
+        filter: invert(1);
+        width: 5rem;
+        
+        @include media-breakpoint-up(md) {
+            width: 8rem;
+        }
+    }
+}
+
+.marble-contact {  
+    padding: 2rem 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url('/static/backgrounds/contact-texture.jpg');
+    
+    @include media-breakpoint-up(md) {
+        background-position: bottom;
+        background-image: url('/static/backgrounds/contact-texture@2x.jpg');
+    }
+
+    h1 {
+        font-family: $marble-serif;
+        color: $marble-brown;
+        font-weight: bold;
+        font-size: 3rem;
+        text-align: center;
+        margin-bottom: 2rem;
+
+        @include media-breakpoint-up(md) {
+            font-size: 3.5rem;
+            text-align: right;
+        }
+    }
+
+    .marble-rock {
+        @include media-breakpoint-up(md) {
+            position: relative;
+            left: -3rem;
+        }
+    }
+}
+
+.marble-contact-form {
+    margin: 1rem 0;
+
+    .form-control {
+        width: 100%;
+        padding: 10px 15px;
+        box-shadow: inset 0px 0px 6px 2px rgba(114, 97, 53, 0.3);
+        border: solid 2px rgba(114, 97, 53, 0.69);
+    }
+
+    @include media-breakpoint-up(md) {
+        position: relative;
+        top: -5rem;
+    }
+}
+
+.marble-contact-content {
+    color: white;
+    font-weight: 500;
+    margin: 0;
+    padding: 4rem 4rem 3rem 4rem;
+
+    @include media-breakpoint-up(md) {
+        padding: 5rem 4rem 4rem 4rem;
+    }
+}
