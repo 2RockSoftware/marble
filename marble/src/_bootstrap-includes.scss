@@ -40,9 +40,9 @@ $theme-colors: map-merge($theme-colors, $marble-branding);
 
 //
 // Helpers
-// @import "~bootstrap/scss/helpers/clearfix";
-// @import "~bootstrap/scss/helpers/colored-links";
+@import "~bootstrap/scss/helpers/clearfix";
+@import "~bootstrap/scss/helpers/colored-links";
 // @import "~bootstrap/scss/helpers/text-truncation";
 // @import "~bootstrap/scss/helpers/position";
 // @import "~bootstrap/scss/helpers/ratio";
-// @import "~bootstrap/scss/helpers/visually-hidden";
+@import "~bootstrap/scss/helpers/visually-hidden";

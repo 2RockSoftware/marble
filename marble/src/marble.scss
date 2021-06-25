@@ -58,7 +58,7 @@ li {
 }
 
 .marble-footer {
-  padding: 0 var(--gutter) 2rem var(--gutter);
+  padding:  2rem var(--gutter);
   background-color: $marble-gray__dark;
   align-items: center;
 
@@ -85,7 +85,7 @@ li {
 
   img {
     filter: invert(1);
-    max-width: 14rem;
+    max-width: 10rem;
   }
 
   ul a { 
@@ -97,7 +97,7 @@ li {
     text-transform: uppercase;
   }
 
-  img, 
+  .marble-footer-logo, 
   p {
     padding: 2rem 0;
 
@@ -108,6 +108,10 @@ li {
     @include media-breakpoint-up(lg) {
       width: 20%;
     }
+  }
+
+  & + .marble-footer { 
+    padding-top: 0;
   }
 }
 
@@ -192,3 +196,4 @@ li {
 }
 
 @import 'home';
+@import 'contact';
