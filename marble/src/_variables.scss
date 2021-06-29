@@ -24,7 +24,8 @@ $marble-branding: (
   "gray-light": $marble-gray__light,
   "gray": $marble-gray,
   "gray-dark": $marble-gray__dark,
-  "black": $marble-black
+  "black": $marble-black,
+  "white": #ffffff
 );
 
 
@@ -36,7 +37,7 @@ $primary:                   $marble-yellow;
 $font-family-sans-serif:    $marble-sans-serif;
 $font-size-root:            18px; 
 
-$btn-border-width:          8px;
+$btn-border-width:          6px;
 $btn-border-radius:         0;
 $btn-font-weight:           700;
 
