@@ -24,6 +24,7 @@
   --bs-gray: #6d6e6d;
   --bs-gray-dark: #656565;
   --bs-black: #000000;
+  --bs-white: #ffffff;
   --bs-font-sans-serif: "Alegreya Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
   --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
@@ -1900,7 +1901,7 @@ progress {
   cursor: pointer;
   user-select: none;
   background-color: transparent;
-  border: 8px solid transparent;
+  border: 6px solid transparent;
   padding: 0.85rem 1.3rem;
   font-size: 0.85rem;
   border-radius: 0;
@@ -2223,6 +2224,36 @@ progress {
   border-color: #000000;
 }
 
+.btn-white {
+  color: #000;
+  background-color: #ffffff;
+  border-color: #ffffff;
+}
+.btn-white:hover {
+  color: #000;
+  background-color: white;
+  border-color: white;
+}
+.btn-check:focus + .btn-white, .btn-white:focus {
+  color: #000;
+  background-color: white;
+  border-color: white;
+  box-shadow: 0 0 0 0.25rem rgba(217, 217, 217, 0.5);
+}
+.btn-check:checked + .btn-white, .btn-check:active + .btn-white, .btn-white:active, .btn-white.active, .show > .btn-white.dropdown-toggle {
+  color: #000;
+  background-color: white;
+  border-color: white;
+}
+.btn-check:checked + .btn-white:focus, .btn-check:active + .btn-white:focus, .btn-white:active:focus, .btn-white.active:focus, .show > .btn-white.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0.25rem rgba(217, 217, 217, 0.5);
+}
+.btn-white:disabled, .btn-white.disabled {
+  color: #000;
+  background-color: #ffffff;
+  border-color: #ffffff;
+}
+
 .btn-outline-primary {
   color: #edc44f;
   border-color: #edc44f;
@@ -2470,6 +2501,31 @@ progress {
 }
 .btn-outline-black:disabled, .btn-outline-black.disabled {
   color: #000000;
+  background-color: transparent;
+}
+
+.btn-outline-white {
+  color: #ffffff;
+  border-color: #ffffff;
+}
+.btn-outline-white:hover {
+  color: #000;
+  background-color: #ffffff;
+  border-color: #ffffff;
+}
+.btn-check:focus + .btn-outline-white, .btn-outline-white:focus {
+  box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.5);
+}
+.btn-check:checked + .btn-outline-white, .btn-check:active + .btn-outline-white, .btn-outline-white:active, .btn-outline-white.active, .btn-outline-white.dropdown-toggle.show {
+  color: #000;
+  background-color: #ffffff;
+  border-color: #ffffff;
+}
+.btn-check:checked + .btn-outline-white:focus, .btn-check:active + .btn-outline-white:focus, .btn-outline-white:active:focus, .btn-outline-white.active:focus, .btn-outline-white.dropdown-toggle.show:focus {
+  box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.5);
+}
+.btn-outline-white:disabled, .btn-outline-white.disabled {
+  color: #ffffff;
   background-color: transparent;
 }
 
@@ -3666,11 +3722,11 @@ progress {
   background-color: #000000 !important;
 }
 
-.bg-body {
+.bg-white {
   background-color: #fff !important;
 }
 
-.bg-white {
+.bg-body {
   background-color: #fff !important;
 }
 
@@ -7147,6 +7203,13 @@ progress {
   color: black;
 }
 
+.link-white {
+  color: #ffffff;
+}
+.link-white:hover, .link-white:focus {
+  color: white;
+}
+
 .visually-hidden,
 .visually-hidden-focusable:not(:focus):not(:focus-within) {
   position: absolute !important;
@@ -7558,6 +7621,12 @@ h3, .h3 {
     position: relative;
     top: -5rem;
   }
+}
+.marble-contact-form .btn {
+  padding-left: 2rem;
+  padding-right: 2rem;
+  display: block;
+  margin: 0 auto;
 }
 
 .marble-contact-content {
