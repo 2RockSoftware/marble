@@ -21,6 +21,9 @@ ADMINS = (
     # ('Your Name', 'your_email@example.com'),
 )
 
+CONTACT_EMAIL = "info@tworock.io"
+TEST_EMAIL = "info+test@tworock.io"
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -233,6 +236,8 @@ SECURE_BROWSER_XSS_FILTER = True
 CSRF_COOKIE_HTTPONLY = True
 X_FRAME_OPTIONS = 'DENY'
 
+GOOGLE_RECAPTCHA_SITE_KEY = os.environ.get("GOOGLE_RECAPTCHA_SITE_KEY", "")
+GOOGLE_RECAPTCHA_SECRET_KEY = os.environ.get("GOOGLE_RECAPTCHA_SECRET_KEY")
 RECAPTCHA_REQUIRED_SCORE = 0.60  # let everything through
 
 SILENCED_SYSTEM_CHECKS = ['captcha.recaptcha_test_key_error']

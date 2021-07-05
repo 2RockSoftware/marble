@@ -1,5 +1,5 @@
+from django.conf import settings
 from django.db import models
-
 from django.utils.translation import gettext as _
 
 from wagtail.admin.edit_handlers import FieldPanel, StreamFieldPanel
@@ -105,5 +105,6 @@ class ContactPage(TwoRockPage):
         context = super(ContactPage, self).get_context(request)
         context.update({
             "contact_form": TwoRockContactForm(request=request),
+            "GOOGLE_RECAPTCHA_SITE_KEY": settings.GOOGLE_RECAPTCHA_SITE_KEY
         })
         return context
