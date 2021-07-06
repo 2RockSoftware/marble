@@ -13,7 +13,7 @@ logger = logging.getLogger(__name__)
 def contact(request):
     success_url = reverse("contact_form_sent")
     if request.method == "POST":
-        form = TwoRockContactForm(request=request.POST, data=request.POST)
+        form = TwoRockContactForm(request.POST)
         if form.is_valid():
             # recaptcha validation
             recaptcha_response = request.POST.get('g-recaptcha-response')
@@ -24,7 +24,7 @@ def contact(request):
             validation_response = requests.post('https://www.google.com/recaptcha/api/siteverify', data=data)
             result = validation_response.json()
             if result['success']:
-                form.send()
+                form.save()
                 return HttpResponseRedirect(success_url)
     else:
         form = TwoRockContactForm()

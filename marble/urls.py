@@ -32,7 +32,7 @@ urlpatterns = [
     path('wagtail/documents/', include(wagtaildocs_urls)),
     path(r'contact/', include('contact_form.urls')),
     path(r'admin/', admin.site.urls),
-    url(r'', include(puput_urls)),  # blog
+    url(r'blog/', include(puput_urls)),  # blog
     path('', include(wagtail_urls)),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

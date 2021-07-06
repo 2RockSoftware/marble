@@ -244,3 +244,4 @@ SILENCED_SYSTEM_CHECKS = ['captcha.recaptcha_test_key_error']
 
 # Wagtail settings
 WAGTAIL_SITE_NAME = 'Two Rock Software'
+PUPUT_AS_PLUGIN = True
