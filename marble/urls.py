@@ -30,7 +30,7 @@ urlpatterns = [
     path(r'', include("marble.cms.urls")),
     path('admin/wagtail/', include(wagtailadmin_urls)),
     path('wagtail/documents/', include(wagtaildocs_urls)),
-    path(r'contact/', include('contact_form.urls')),
+    path(r'contact-app/', include('contact_form.urls')),
     path(r'admin/', admin.site.urls),
     url(r'blog/', include(puput_urls)),  # blog
     path('', include(wagtail_urls)),
