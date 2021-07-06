@@ -24,7 +24,7 @@
 
         <div class="row justify-content-end">
             <div class="col-md-6">
-                <form class="marble-contact-form" method="POST" action="{% url 'contact_form' %}" id="twoRockContactForm">
+                <form class="marble-contact-form" method="POST" action="{% url 'website:contact_form_submit' %}" id="twoRockContactForm">
                     {% csrf_token %}
                     <div class="form-group mb-4">
                         <label for="name" class="form-label visually-hidden">Name</label>
