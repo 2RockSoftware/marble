@@ -26,4 +26,4 @@ public/*
 .vscode
 *.log
 node_modules
-dist
+dist/*hot*
