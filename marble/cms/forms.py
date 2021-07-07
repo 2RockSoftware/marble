@@ -17,11 +17,6 @@ class TwoRockContactForm(forms.ModelForm):
         model = ContactFormSubmission
         fields = "__all__"
 
-    def save(self, commit=True):
-        instance = super(TwoRockContactForm, self).save(commit=True)
-        self.send()
-        return instance
-
     def send(self):
         name = self.cleaned_data["name"]
         org = self.cleaned_data["organization"]

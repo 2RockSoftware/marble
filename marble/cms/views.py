@@ -1,9 +1,9 @@
+import json
 import logging
 import requests
 
 from django.conf import settings
-from django.http import HttpResponseRedirect
-from django.shortcuts import reverse, render
+from django.http import HttpResponse
 
 from marble.cms.forms import TwoRockContactForm
 
@@ -11,12 +11,14 @@ logger = logging.getLogger(__name__)
 
 
 def contact(request):
-    success_url = reverse("contact_form_sent")
     if request.method == "POST":
-        form = TwoRockContactForm(request.POST)
+        data = json.loads(request.body)
+        form = TwoRockContactForm(data)
         if form.is_valid():
+            # save data into database even if recaptcha fails
+            form.save()
             # recaptcha validation
-            recaptcha_response = request.POST.get('g-recaptcha-response')
+            recaptcha_response = data.get('g_recaptcha_response')
             data = {
                 'secret': settings.GOOGLE_RECAPTCHA_SECRET_KEY,
                 'response': recaptcha_response
@@ -24,16 +26,24 @@ def contact(request):
             validation_response = requests.post('https://www.google.com/recaptcha/api/siteverify', data=data)
             result = validation_response.json()
             if result['success']:
-                form.save()
-                return HttpResponseRedirect(success_url)
-    else:
-        form = TwoRockContactForm()
+                form.send()  # only send email if submission passes recaptcha challenge
+                data = {
+                    "message": "Your inquiry has been successfully submitted. We will contact you as soon as possible.",
+                    "errors": False
+                }
+                return HttpResponse(status=200, content=json.dumps(data))
+            else:
+                data = {
+                    "message": "Sorry but your submission didn't made it through our spam filter. Please give us a "
+                               "call at (919) 636-0953.",
+                    "errors": True
+                }
+                return HttpResponse(status=200, content=json.dumps(data))
+        else:
+            data = {
+                "message": [error for error in form.errors],
+                "errors": False
+            }
+            return HttpResponse(status=200, content=json.dumps(data))
 
-    context = {
-        "form": form,
-        "page": {
-            "title": "Contact Us"
-        },
-        "GOOGLE_RECAPTCHA_SITE_KEY": settings.GOOGLE_RECAPTCHA_SITE_KEY,
-    }
-    return render(request, "cms/contact_page.html", context)
+    return HttpResponse(status=200, content=json.dumps({"message": "Only POST requests are supported.", "errors": True}))

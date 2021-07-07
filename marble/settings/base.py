@@ -61,7 +61,6 @@ INSTALLED_APPS = [
 
     'modelcluster',
     'taggit',
-    'contact_form',
     'captcha',
 ]
 
@@ -233,7 +232,10 @@ AUTH_PASSWORD_VALIDATORS = [
 # on how the site uses SSL.
 SECURE_CONTENT_TYPE_NOSNIFF = True
 SECURE_BROWSER_XSS_FILTER = True
-CSRF_COOKIE_HTTPONLY = True
+CSRF_COOKIE_HTTPONLY = False
+SESSION_COOKIE_SECURE = True
+# SESSION_COOKIE_SAMESITE = 'None'
+# CSRF_COOKIE_SAMESITE = 'None'
 X_FRAME_OPTIONS = 'DENY'
 
 GOOGLE_RECAPTCHA_SITE_KEY = os.environ.get("GOOGLE_RECAPTCHA_SITE_KEY", "")
