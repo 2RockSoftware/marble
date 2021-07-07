@@ -3,6 +3,7 @@ import logging
 import requests
 
 from django.conf import settings
+from django.views.decorators.csrf import csrf_exempt
 from django.http import HttpResponse
 
 from marble.cms.forms import TwoRockContactForm
@@ -10,6 +11,7 @@ from marble.cms.forms import TwoRockContactForm
 logger = logging.getLogger(__name__)
 
 
+@csrf_exempt
 def contact(request):
     if request.method == "POST":
         data = json.loads(request.body)
