@@ -61,7 +61,6 @@ INSTALLED_APPS = [
 
     'modelcluster',
     'taggit',
-    'contact_form',
     'captcha',
 ]
 
