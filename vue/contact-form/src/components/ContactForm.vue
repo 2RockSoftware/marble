@@ -4,19 +4,19 @@
       <div class="form-group mb-4">
           <label class="form-label visually-hidden">Name</label>
           <Field v-model="name" name="name" type="text" class="form-control" aria-describedby="name of person contacting Two Rock Software" placeholder="Name"/>
-          <div class="invalid-feedback error">{{ errors.name }}</div>
+          <div class="invalid-feedback text-danger">{{ errors.name }}</div>
       </div>
 
       <div class="form-group mb-4">
           <label class="form-label visually-hidden">Organization</label>
           <Field v-model="organization" name="organization" type="text" class="form-control" aria-describedby="Organization of person contacting Two Rock Software" placeholder="Organization"/>
-          <div class="invalid-feedback error">{{ errors.organization }}</div>
+          <div class="invalid-feedback text-danger">{{ errors.organization }}</div>
       </div>
 
       <div class="form-group mb-4">
           <label class="form-label visually-hidden">Email</label>
           <Field v-model="email" name="email" type="text" class="form-control" aria-describedby="Email address of person contacting Two Rock Software" placeholder="Email"/>
-          <div class="invalid-feedback error">{{ errors.email }}</div>
+          <div class="invalid-feedback text-danger">{{ errors.email }}</div>
       </div>
 
       <div class="form-group row mb-4">
@@ -24,13 +24,13 @@
           <label class="form-label visually-hidden">Email</label>
           <Field v-model="phone_number" name="phone_number" type="tel" class="form-control" aria-describedby="Phone Number of person contacting Two Rock Software"
                  placeholder="Phone Number" v-mask="['(###) ###-####', '(###) ###-#### Ext. ####']"/>
-          <div class="invalid-feedback error">{{ errors.phone_number }}</div>
+          <div class="invalid-feedback text-danger">{{ errors.phone_number }}</div>
         </div>
         <div class="col-5">
           <label class="form-label visually-hidden">Budget</label>
           <Field v-model="budget" name="budget" type="text" class="form-control" aria-describedby="Budget allocated for project"
                  placeholder="Budget" />
-          <div class="invalid-feedback error">{{ errors.budget }}</div>
+          <div class="invalid-feedback text-danger">{{ errors.budget }}</div>
         </div>
       </div>
 
@@ -40,7 +40,7 @@
             <textarea v-bind="field" class="form-control" aria-describedby="Message"
                    placeholder="What can we build together?" rows="4" id="message"></textarea>
           </Field>
-          <div class="invalid-feedback error">{{ errors.message }}</div>
+          <div class="invalid-feedback text-danger">{{ errors.message }}</div>
       </div>
 
       <button type="submit" class="btn btn-outline-white">Let's Rock</button>

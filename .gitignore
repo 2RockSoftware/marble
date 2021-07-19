@@ -10,3 +10,5 @@ devproject
 node_modules
 
 *.css
+marble/static/build
+marble/static/contact-form
