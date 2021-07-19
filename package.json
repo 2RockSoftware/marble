@@ -8,6 +8,9 @@
     "build": "webpack --mode production; vue-cli-service build  /vue/contact-form/src/main.js",
     "lint": "vue-cli-service lint"
   },
+  "resolutions": {
+    "webpack": "5.41.1"
+},
   "dependencies": {
     "axios": "^0.21.1",
     "bootstrap": "^5.0.2",
@@ -24,43 +27,19 @@
     "vue": "^3.0.0",
     "vue-recaptcha-v3": "^2.0.1",
     "vue-the-mask": "^0.11.1",
-    "webpack": "5.19",
-    "webpack-cli": "^4.5.0",
+    "webpack": "^4.19.0",
+    "webpack-cli": "^4.7.2",
     "yargs": "^3.31.0",
     "yup": "^0.32.9"
   },
   "devDependencies": {
-    "@vue/cli-plugin-eslint": "^3.1.1",
-    "@vue/cli-service": "^3.12.1",
+    "@vue/cli-service": "^4.5.13",
     "@vue/compiler-sfc": "^3.0.0",
-    "eslint": "^6.7.2",
-    "eslint-plugin-vue": "^7.0.0",
-    "lint-staged": "^9.5.0",
-    "webpack-cli": "^4.7.2"
-  },
-  "eslintConfig": {
-    "root": true,
-    "env": {
-      "node": true
-    },
-    "extends": [
-      "plugin:vue/vue3-essential",
-      "eslint:recommended"
-    ],
-    "parserOptions": {
-      "ecmaVersion": 2020
-    },
-    "rules": {}
+    "vue-loader": "^15.9.7"
   },
   "browserslist": [
     "> 1%",
     "last 2 versions",
     "not dead"
-  ],
-  "lint-staged": {
-    "*.{js,jsx,vue}": [
-      "vue-cli-service lint",
-      "git add"
-    ]
-  }
+  ]
 }

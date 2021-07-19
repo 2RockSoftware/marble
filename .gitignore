@@ -27,3 +27,4 @@ public/*
 *.log
 node_modules
 dist/*hot*
+marble/static/build/*
