@@ -28,7 +28,7 @@
 
     h1 {
         font-family: $marble-serif;
-        color: $marble-brown;
+        color: $marble-green;
         font-weight: bold;
         font-size: 3rem;
         text-align: center;
@@ -54,8 +54,8 @@
     .form-control {
         width: 100%;
         padding: 10px 15px;
-        box-shadow: inset 0px 0px 6px 2px rgba(114, 97, 53, 0.3);
-        border: solid 2px rgba(114, 97, 53, 0.69);
+        box-shadow: inset 0px 0px 6px 2px rgba(53, 114, 58, 0.3);
+        border: solid 2px $marble-green;
     }
 
     @include media-breakpoint-up(md) {
@@ -68,6 +68,10 @@
         padding-right: 2rem;
         display: block;
         margin: 0 auto;
+    }
+
+    .btn-outline-white {
+        background-color: $marble-beige;
     }
 }
 
