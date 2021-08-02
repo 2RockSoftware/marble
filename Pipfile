@@ -40,6 +40,7 @@ django-el-pagination = "==3.3.0"
 django-social-share = "==2.2.1"
 puput = {editable = true, git = "https://github.com/APSL/puput.git", ref = "f6f8d7b10fd34c0be4a91c1364d839adb2d544fb"}
 whitenoise = "*"
+psycopg2-binary = "*"
 
 [requires]
 python_version = "3.8"
