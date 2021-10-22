@@ -69,9 +69,11 @@
         display: block;
         margin: 0 auto;
     }
-
-    .btn-outline-white {
-        background-color: $marble-beige;
+    
+    @include media-breakpoint-down(md) {
+        .btn-outline-white {
+            background-color: $marble-beige;
+        }
     }
 }
 
