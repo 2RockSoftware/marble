@@ -19,12 +19,9 @@
     padding: 2rem 0;
     background-repeat: no-repeat;
     background-size: cover;
-    background-image: url('/static/backgrounds/contact-texture.jpg');
+    background-position: bottom;
+    background-image: url('/static/backgrounds/contact-texture@2x.jpg');
     
-    @include media-breakpoint-up(md) {
-        background-position: bottom;
-        background-image: url('/static/backgrounds/contact-texture@2x.jpg');
-    }
 
     h1 {
         font-family: $marble-serif;
@@ -67,13 +64,9 @@
         padding-left: 2rem;
         padding-right: 2rem;
         display: block;
+        background-color: $marble-green;
         margin: 0 auto;
-    }
-    
-    @include media-breakpoint-down(md) {
-        .btn-outline-white {
-            background-color: $marble-beige;
-        }
+        color: white;
     }
 }
 
