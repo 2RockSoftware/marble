@@ -1,0 +1,26 @@
+{% extends "cms/base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="marble-page yellow">
+    <div class="marble-page-nav">
+        <a href="/"><img src="{% static 'images/Two-Rock-Software-Logo.svg' %}" alt="Two Rock Software LLC Logo" /></a>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div>
+                <h1>{{ page.title }}</h1>
+            </div>
+
+            <div>
+                <div class="marble-rock" style="background-image: url('{% static 'backgrounds/contact-rock.svg' %}');">
+                    <p class="marble-page-content">
+                        {{ page.content }}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

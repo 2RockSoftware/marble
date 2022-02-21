@@ -10,7 +10,7 @@
   },
   "resolutions": {
     "webpack": "5.41.1"
-},
+  },
   "dependencies": {
     "axios": "^0.21.1",
     "bootstrap": "^5.0.2",
