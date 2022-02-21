@@ -139,5 +139,7 @@ ALTER ROLE
 Front End
 --------
 
+`nvm use 14` or `nvm use 16`
 `npm install`
 `npm run build` or `npm run dev`
+
