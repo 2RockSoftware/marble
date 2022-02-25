@@ -7558,29 +7558,6 @@ body {
   font-size: inherit;
 }
 
-ul {
-  padding: 0;
-}
-
-li {
-  line-height: 1.15;
-  margin: 0.75rem 0;
-  list-style: none;
-  font-weight: 500;
-  text-align: center;
-}
-@media (min-width: 540px) {
-  li {
-    text-align: left;
-  }
-  li:before {
-    content: "—";
-    display: inline-block;
-    width: 1em;
-    margin-right: 0.25rem;
-  }
-}
-
 .marble-footer {
   padding: 2rem var(--gutter);
   background-color: #656565;
@@ -7723,6 +7700,28 @@ h3, .h3 {
   color: #726135;
 }
 
+.marble-home ul {
+  padding: 0;
+}
+.marble-home li {
+  line-height: 1.15;
+  margin: 0.75rem 0;
+  list-style: none;
+  font-weight: 500;
+  text-align: center;
+}
+@media (min-width: 540px) {
+  .marble-home li {
+    text-align: left;
+  }
+  .marble-home li:before {
+    content: "—";
+    display: inline-block;
+    width: 1em;
+    margin-right: 0.25rem;
+  }
+}
+
 .marble-hero {
   display: flex;
   flex-flow: column;
@@ -7731,7 +7730,7 @@ h3, .h3 {
   text-align: center;
   padding: 4rem var(--gutter) 12rem var(--gutter);
   height: auto;
-  overflow-x: hidden;
+  overflow: hidden;
   background-position: bottom;
   background-repeat: no-repeat;
   background-size: cover;
@@ -7763,9 +7762,9 @@ h3, .h3 {
   margin: 1rem 0;
   font-size: 1.5rem;
 }
-@media (min-width: 540px) {
+@media (min-width: 980px) {
   .marble-hero h2, .marble-hero .h2 {
-    font-size: 2.15rem;
+    font-size: 2rem;
   }
 }
 @media (min-width: 2000px) {
@@ -7946,6 +7945,56 @@ h3, .h3 {
 
 .server-messages {
   min-height: 500px;
+}
+
+.marble-careers-hero {
+  padding: 2rem 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom;
+  background-image: url("/static/backgrounds/careers-texture.png");
+  min-height: 15rem;
+}
+@media (min-width: 980px) {
+  .marble-careers-hero {
+    min-height: 18rem;
+  }
+}
+.marble-careers-hero h1, .marble-careers-hero .h1 {
+  font-family: "Alegreya", "Georgia", "Times New Roman", serif;
+  color: white;
+  font-weight: bold;
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+@media (min-width: 980px) {
+  .marble-careers-hero h1, .marble-careers-hero .h1 {
+    font-size: 3.5rem;
+    text-align: right;
+  }
+}
+
+.marble-careers-content {
+  padding-top: 2rem;
+  padding-bottom: 5rem;
+  min-height: 100vh;
+}
+.marble-careers-content h4, .marble-careers-content .h4 {
+  margin-bottom: 2rem;
+}
+.marble-careers-content p {
+  font-size: 1.25rem;
+  font-weight: 400;
+  text-align: left;
+}
+.marble-careers-content li {
+  line-height: 1.15;
+  font-size: 1.25rem;
+  margin-bottom: 0.75rem;
+}
+.marble-careers-content ul {
+  margin-bottom: 2rem;
 }
 
 .marble-page-nav {

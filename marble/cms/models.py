@@ -1,11 +1,13 @@
 from django.conf import settings
+from django import forms
+
 from django.db import models
 from django.utils.translation import gettext as _
 
 from wagtail.admin.edit_handlers import FieldPanel, StreamFieldPanel
 from wagtail.core import blocks
 from wagtail.core.models import Page
-from wagtail.core.fields import StreamField
+from wagtail.core.fields import StreamField, RichTextField
 from wagtail.images.blocks import ImageChooserBlock
 
 from marble.cms.blocks import FounderBlock, DeveloperBlock, ProjectBlock, ClientsLogos
@@ -93,12 +95,18 @@ class HomePage(Page):
 
 
 class TwoRockPage(Page):
-    content = models.TextField(blank=True)
+    content =  RichTextField(
+        blank=True,
+        null=True,
+    )
 
     content_panels = Page.content_panels + [
-        FieldPanel("content")
+        FieldPanel("content", classname="full")
     ]
 
+
+class CareersPage(TwoRockPage):
+    pass
 
 class ContactPage(TwoRockPage):
     def get_context(self, request, *args, **kwargs):
