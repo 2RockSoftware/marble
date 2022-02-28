@@ -1,0 +1,23 @@
+{% extends "cms/base.html" %}
+{% load static %}
+{% load wagtailcore_tags %}
+
+{% block content %}
+    <div class="marble-careers-hero">
+        <div class="marble-contact-nav">
+            <a href="/"><img src="{% static 'images/Two-Rock-Software-Logo.svg' %}" alt="Two Rock Software LLC Logo" /></a>
+        </div> 
+
+        <div class="container">
+            <div class="row justify-content-end">
+                <div class="col-md-6 order-md-2 text-md-end">
+                    <h1>{{ page.title }}</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container marble-careers-content">
+        {{ page.content|richtext }}
+    </div>
+{% endblock %}

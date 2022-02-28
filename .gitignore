@@ -8,7 +8,7 @@
 *local.py
 devproject
 node_modules
-
+*.pyc
 *.css
 marble/static/build
 marble/static/contact-form

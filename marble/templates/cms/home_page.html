@@ -2,12 +2,14 @@
 {% load static %}
 {% load wagtailcore_tags %}
 
+{% block body_class %}marble-home{% endblock %}
+
 {% block content %}
     <header class="marble-hero">
-        <h1 class="col-sm-4"><img src="{% static 'images/Two-Rock-Software-Logo.svg' %}" alt="Two Rock Software LLC Logo" class="marble-hero-logo" /></h1>
+        <h1 class="col-sm-6 col-md-4"><img src="{% static 'images/Two-Rock-Software-Logo.svg' %}" alt="Two Rock Software LLC Logo" class="marble-hero-logo" /></h1>
        
        {% if page.elevator_pitch %}
-            <h2 class="col-sm-8 col-md-7">
+            <h2 class="col-sm-9 col-md-7">
                 {{ page.elevator_pitch | safe }}
             </h2>
         {% endif %}
@@ -17,6 +19,7 @@
             {% comment %} <a href="#" style="background-image: url('{% static 'backgrounds/rock-nav-1.svg' %}');">Clients</a> {% endcomment %}
             {% comment %} <a href="#" style="background-image: url('{% static 'backgrounds/rock-nav-2.svg' %}');">Blog</a> {% endcomment %}
             {% comment %} <a href="#" style="background-image: url('{% static 'backgrounds/rock-nav-3.svg' %}');">The Quarry</a> {% endcomment %}
+            <a href="/jobs/" style="background-image: url('{% static 'backgrounds/rock-nav-4.svg' %}');">Jobs</a>
             <a href="/contact/" style="background-image: url('{% static 'backgrounds/rock-nav-4.svg' %}');">Contact</a>
         </nav>
     </header>

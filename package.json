@@ -4,13 +4,13 @@
   "private": true,
   "description": "Two Rock Software website",
   "scripts": {
-    "serve": "webpack --mode development --watch; vue-cli-service serve /vue/contact-form/src/main.js",
+    "dev": "webpack --mode development --watch; vue-cli-service serve /vue/contact-form/src/main.js",
     "build": "webpack --mode production; vue-cli-service build  /vue/contact-form/src/main.js",
     "lint": "vue-cli-service lint"
   },
   "resolutions": {
     "webpack": "5.41.1"
-},
+  },
   "dependencies": {
     "axios": "^0.21.1",
     "bootstrap": "^5.0.2",
