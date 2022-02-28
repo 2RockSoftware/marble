@@ -1,0 +1,130 @@
+{% extends "cms/base.html" %}
+{% load static %}
+{% load wagtailcore_tags %}
+
+{% block body_class %}marble-home{% endblock %}
+
+{% block content %}
+    <header class="marble-hero">
+        <h1 class="col-sm-6 col-md-4"><img src="{% static 'images/Two-Rock-Software-Logo.svg' %}" alt="Two Rock Software LLC Logo" class="marble-hero-logo" /></h1>
+       
+       {% if page.elevator_pitch %}
+            <h2 class="col-sm-9 col-md-7">
+                {{ page.elevator_pitch | safe }}
+            </h2>
+        {% endif %}
+
+        <nav class="marble-hero-nav">
+            <a href="#about">About</a>
+            {% comment %} <a href="#" style="background-image: url('{% static 'backgrounds/rock-nav-1.svg' %}');">Clients</a> {% endcomment %}
+            {% comment %} <a href="#" style="background-image: url('{% static 'backgrounds/rock-nav-2.svg' %}');">Blog</a> {% endcomment %}
+            {% comment %} <a href="#" style="background-image: url('{% static 'backgrounds/rock-nav-3.svg' %}');">The Quarry</a> {% endcomment %}
+            <a href="/jobs/" style="background-image: url('{% static 'backgrounds/rock-nav-4.svg' %}');">Jobs</a>
+            <a href="/contact/" style="background-image: url('{% static 'backgrounds/rock-nav-4.svg' %}');">Contact</a>
+        </nav>
+    </header>
+    
+    {% if page.what_we_build_section %}
+    <section class="marble-home-build">
+        <div class="container"> 
+            {% for block in page.what_we_build_section %}
+                {% if block.block_type == 'heading' %}
+                    <h2>{{ block.value }}</h2>
+                {% elif block.block_type == 'subheading' %}
+                    <h3>{{ block.value }}</h3>
+                {% else %}
+                    {% include_block block %}
+                {% endif %}
+            {% endfor %}
+        </div>
+    </section>
+    {% endif %}
+   
+    {% if page.how_we_work_section %}
+    <section class="marble-home-how">
+        <div class="container">
+            {% for block in page.how_we_work_section %}
+                {% if block.block_type == 'heading' %}
+                    <h2>{{ block.value }}</h2>
+                {% elif block.block_type == 'subheading' %}
+                    <h3>{{ block.value }}</h3>
+                {% else %}
+                    {% include_block block %}
+                {% endif %}
+            {% endfor %}
+        </div>
+    </section>
+    {% endif %}
+
+    {% if page.about_us_section %}
+    <img srcset="{% static 'backgrounds/home-about-rocks.png' %} 1000w,
+                {% static 'backgrounds/home-about-rocks@2x.png' %} 2000w"
+        src="{% static 'backgrounds/home-about-rocks.png' %}" 
+        sizes="(max-width: 960px) 1000px, 2000px"
+        class="marble-rock-wide"/>
+
+    <section class="marble-home-about" id="about">
+        <div class="container">
+            <div class="row pb-5">
+                <div class="col-sm-10">
+                {% for block in page.about_us_section %}
+                    {% if block.block_type == 'heading' %}
+                        <h2 class="text-brown">{{ block.value }}</h2>
+                    {% else %}
+                        {% include_block block %}
+                    {% endif %}
+                {% endfor %}
+                </div>
+            </div>
+            
+            {% comment %} 
+                {% for member in page.team.all %}
+                    {{ member }}
+                {% endfor %}
+            {% endcomment %}
+
+            <div class="row">
+                <div class="col-sm-5 col-lg-4 marble-team-member is-founder">
+                    <h3>Victor Rocha</h3>
+                    <h4>Founder</h4>
+
+                    <img src="{% static 'images/victor-tworock.jpg' %}" class="pb-2" />
+
+                    <p>Victor began doing Python development in 2008 because it afforded him the performance needed to meet his goals in developing mathematical analysis and modeling solutions. From there it made good sense to use Django starting in 2010 when he first began building practice management software for a law firm. Since then, he has worked with small and midsize development teams on projects from NGOs, startups, and small businesses. He also developed successful cloud-based trust accounting software for attorneys called Account Legal.</p>
+                </div>
+                
+                <div class="col-sm-5 offset-sm-2 col-lg-4 offset-lg-4 marble-team-member is-founder">
+                    <h3>Peter Grandstaff</h3>
+                    <h4>Founder</h4>
+
+                    <img src="{% static 'images/peter-tworock.jpg' %}" class="pb-2" />
+
+                    <p>Peter built his first website as a teen in 1995. Early on he did Perl, then PHP. He's been loving Python since he started building with Django in 2011. He has been doing web development with an emphasis on marketing full time since 2009. He is also fluent in search engine optimization and manages ad campaigns for clients. When he isn't working on customer-facing apps, he loves building backend systems to make companies more efficient. Peter is also our devops specialist with a wide range of experience deploying apps in the cloud and working with AWS.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    {% endif %}
+
+    <img srcset="{% static 'backgrounds/home-footer-start.jpg' %} 1000w,
+                {% static 'backgrounds/home-footer-start@2x.jpg' %} 2000w"
+        src="{% static 'backgrounds/home-footer-start.jpg' %}" 
+        sizes="(max-width: 960px) 1000px, 2000px"
+        class="marble-rock-wide" />
+
+    <footer class="marble-footer">
+        <div class="container">
+            <div class="row justify-content-center align-items-center pb-5">
+                <div class="col-12 col-md-8">
+                    <h2 class="text-white">What do you want to build?</h2>
+                </div>
+
+                <div class="col-8 col-md-4">
+                    <a href="/contact/" style="background-image: url('{% static 'backgrounds/rock-nav-0.svg' %}');" class="marble-rock">
+                        Contact Us
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+{% endblock %}

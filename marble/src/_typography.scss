@@ -1,0 +1,31 @@
+// 
+// Utilities 
+
+.marble-serif {
+  font-family: $marble-serif;
+}
+
+.marble-sans-serif {
+  font-family: $marble-sans-serif;
+}
+
+
+// 
+// Headings 
+
+h2 {
+  margin-bottom: 0;
+  font-weight: bold;
+  font-family: $marble-serif;
+  font-size: 2rem;
+
+  @include media-breakpoint-up(sm) {
+    font-size: 3rem;
+  }
+}
+
+h3 {
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+  font-size: 1.15rem;
+}

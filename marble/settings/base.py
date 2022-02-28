@@ -21,6 +21,9 @@ ADMINS = (
     # ('Your Name', 'your_email@example.com'),
 )
 
+CONTACT_EMAIL = "info@tworock.io"
+TEST_EMAIL = "info+test@tworock.io"
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -32,6 +35,33 @@ INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.humanize',
     'django.contrib.sitemaps',
+
+    # internal apps
+    'marble.cms',
+
+    # third party apps
+    'wagtail.contrib.forms',
+    'wagtail.contrib.redirects',
+    'wagtail.embeds',
+    'wagtail.sites',
+    'wagtail.users',
+    'wagtail.snippets',
+    'wagtail.documents',
+    'wagtail.images',
+    'wagtail.search',
+    'wagtail.admin',
+    'wagtail.core',
+    'wagtail.contrib.sitemaps',
+    'wagtail.contrib.routable_page',
+
+    # blog
+    'django_social_share',
+    'puput',
+    'colorful',
+
+    'modelcluster',
+    'taggit',
+    'captcha',
 ]
 
 MIDDLEWARE = [
@@ -43,6 +73,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'wagtail.contrib.redirects.middleware.RedirectMiddleware',
 ]
 
 
@@ -201,5 +232,18 @@ AUTH_PASSWORD_VALIDATORS = [
 # on how the site uses SSL.
 SECURE_CONTENT_TYPE_NOSNIFF = True
 SECURE_BROWSER_XSS_FILTER = True
-CSRF_COOKIE_HTTPONLY = True
+CSRF_COOKIE_HTTPONLY = False
+SESSION_COOKIE_SECURE = True
+SESSION_COOKIE_SAMESITE = 'Lax'
+CSRF_COOKIE_SAMESITE = 'Lax'
 X_FRAME_OPTIONS = 'DENY'
+
+GOOGLE_RECAPTCHA_SITE_KEY = os.environ.get("GOOGLE_RECAPTCHA_SITE_KEY", "")
+GOOGLE_RECAPTCHA_SECRET_KEY = os.environ.get("GOOGLE_RECAPTCHA_SECRET_KEY")
+RECAPTCHA_REQUIRED_SCORE = 0.60  # let everything through
+
+SILENCED_SYSTEM_CHECKS = ['captcha.recaptcha_test_key_error']
+
+# Wagtail settings
+WAGTAIL_SITE_NAME = 'Two Rock Software'
+PUPUT_AS_PLUGIN = True

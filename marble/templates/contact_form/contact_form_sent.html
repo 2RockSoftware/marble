@@ -1,0 +1,28 @@
+{% extends "cms/base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="marble-contact">
+    <div class="marble-contact-nav">
+        <img src="{% static 'images/Two-Rock-Software-Logo.svg' %}" alt="Two Rock Software LLC Logo" />
+    </div>
+
+    <div class="container">
+        <div class="row" style="min-height: 600px;">
+            <div class="col-md-6 order-md-2">
+                <h1>Email Sent</h1>
+            </div>
+
+            <div class="col-md-6">
+                <div class="marble-rock" style="background-image: url('{% static 'backgrounds/contact-rock.svg' %}');">
+                    <p class="marble-contact-content">
+                        Thank you for your inquiry. We will be getting in touch as soon as possible.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+{% endblock %}

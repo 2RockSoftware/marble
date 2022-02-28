@@ -1,0 +1,169 @@
+// 
+// Home 
+
+.marble-home {
+  ul {
+    padding: 0;
+  }
+  
+  li {
+    line-height: 1.15;
+    margin: 0.75rem 0;
+    list-style: none;
+    font-weight: 500;
+    text-align: center;
+  
+    @include media-breakpoint-up(sm) {
+      text-align: left;
+  
+      &:before {
+        content: "—";
+        display: inline-block; 
+        width: 1em; 
+        margin-right: 0.25rem;
+      }
+    }
+  }
+}
+// Hero 
+
+.marble-hero {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 4rem var(--gutter) 12rem var(--gutter);
+  height: auto;
+  overflow: hidden;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url('/static/backgrounds/home-hero-rocks.jpg');
+  
+  @include media-breakpoint-up(sm) {
+    height: 60rem;
+    padding: 2rem 1rem 20rem 1rem;
+  }
+  
+  @include media-breakpoint-up(md) {
+    padding: 3rem 1rem 30rem 1rem;
+  }  
+
+  @include media-breakpoint-up(xl) {
+    height: 70rem;
+    padding: 2rem 1rem 30rem 1rem;
+  }
+
+  @include media-breakpoint-up(xxl) {
+    height: 80rem;
+  }
+
+  h2 {
+    margin: 1rem 0;
+    font-size: 1.5rem;
+
+    @include media-breakpoint-up(md) {
+      font-size: 2rem;
+    }
+
+    @include media-breakpoint-up(xl) {
+      max-width: 48rem;
+      font-size: 2.35rem;
+    }
+  }
+}
+
+.marble-hero-nav {
+  display: flex;
+  padding: var(--gutter) 0;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  a {
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: $marble-bold;
+    color: $marble-gray;
+    padding: 1.15rem 1.5rem;
+    margin: 0 1rem;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    letter-spacing: 0.02rem;
+    background-image: url('/static/backgrounds/rock-nav-0.svg');
+
+    &:hover {
+      opacity: 0.9;
+    }
+  }
+}
+
+.marble-hero-logo {
+  margin: var(--gutter) 0;
+  padding: 0 10%;
+  max-width: 100%;
+}
+
+
+// 
+// Home Content 
+
+.marble-home-build {
+  position: relative;
+  padding: var(--gutter);
+
+  @include media-breakpoint-up(sm) {
+    margin-top: -10rem;
+  }
+
+  h2,
+  h3 {
+    text-align: center;
+
+    @include media-breakpoint-up(sm) {
+      text-align: right;
+    }
+  }
+  
+  .marble-rock {
+    min-height: 16rem;
+    
+    @include media-breakpoint-up(xl) {
+      min-height: 20rem;
+    }
+  }
+  
+  @include media-breakpoint-up(xl) {
+    .marble-rock-row {
+      margin: 0 -8rem;
+    }
+  }
+}
+
+.marble-home-how {
+  padding: 6rem var(--gutter);
+
+  .marble-rock {
+    padding: 3rem; 
+
+    @include media-breakpoint-up(lg) {
+      padding: 4rem 1rem 3rem 3rem;
+    }
+  }
+}
+
+.marble-home-about {
+  padding: 6rem var(--gutter);
+
+  h2 {
+    line-height: 1;
+    margin-bottom: 1rem;
+    
+    @include media-breakpoint-up(lg) {
+      padding-right: 6rem;
+      font-size: 3.5rem;
+    } 
+  }
+
+}

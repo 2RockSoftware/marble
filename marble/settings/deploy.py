@@ -3,6 +3,8 @@
 # Settings for live deployed environments: vagrant, staging, production, etc
 import os
 
+from socket import gethostname, gethostbyname
+
 from .base import *  # noqa
 
 os.environ.setdefault('CACHE_HOST', '127.0.0.1:11211')
@@ -68,18 +70,18 @@ STATIC_ROOT = os.path.join(PUBLIC_ROOT, 'static')
 
 MEDIA_ROOT = os.path.join(PUBLIC_ROOT, 'media')
 
-CACHES = {
-    'default': {
-        'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',
-        'LOCATION': '%(CACHE_HOST)s' % os.environ,
-    }
-}
+#CACHES = {
+#    'default': {
+#        'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',
+#        'LOCATION': '%(CACHE_HOST)s' % os.environ,
+#    }
+#}
 
 EMAIL_HOST = os.environ.get('EMAIL_HOST', 'localhost')
 EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER', '')
 EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD', '')
-EMAIL_USE_TLS = os.environ.get('EMAIL_USE_TLS', False)
-EMAIL_USE_SSL = os.environ.get('EMAIL_USE_SSL', False)
+EMAIL_USE_TLS = os.environ.get('EMAIL_USE_TLS', 'false').lower() == 'true'
+EMAIL_USE_SSL = os.environ.get('EMAIL_USE_SSL', 'false').lower() == 'true'
 # use TLS or SSL, not both:
 assert not (EMAIL_USE_TLS and EMAIL_USE_SSL)
 if EMAIL_USE_TLS:
@@ -99,7 +101,12 @@ SESSION_COOKIE_SECURE = True
 
 SESSION_COOKIE_HTTPONLY = True
 
-ALLOWED_HOSTS = [os.environ['DOMAIN']]
+ALLOWED_HOSTS = [
+    "172.17.0.*",
+    gethostname(),
+    gethostbyname(gethostname()),
+    os.environ['DOMAIN']
+]
 
 # Use template caching on deployed servers
 for backend in TEMPLATES:

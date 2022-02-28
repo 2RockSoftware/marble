@@ -1,0 +1,11 @@
+@import "node_modules/bootstrap/scss/variables";
+
+// Overwrite Bootstrap variables and utilities to only create what we need.
+// Some utilities are renamed in favor of verbosity.
+
+// // Brand Colors
+// $colors: map-remove($colors, "indigo", "pink", "orange", "green", "teal", "cyan", "purple");
+
+// // Theme Colors
+// $theme-colors: map-merge($theme-colors, $marble-branding);
+// $theme-colors: map-remove($theme-colors, "success", "info", "warning", "danger", "light", "dark");

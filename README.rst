@@ -1,9 +1,7 @@
-
-
 Requirements
 ------------
 
-Below you will find basic setup and deployment instructions for the ITicket
+Below you will find basic setup and deployment instructions for the Marble
 project. To begin you should have the following applications installed on your
 local development system::
 
@@ -25,8 +23,8 @@ First clone the repository from BitBucket and switch to the new directory::
 
 Next, create a virtual environment and install all of the requirements::
 
-  (iticket)$ pipenv shell
-  (iticket)$ pipenv install --dev
+  (marble)$ pipenv shell --python 3.8
+  (marble)$ pipenv install --dev
 
 Now, create a local settings file and set your DJANGO_SETTINGS_MODULE to use it:::
 
@@ -46,6 +44,24 @@ Create the Postgres database and run the initial syncdb/migrate::
 You should now be able to run the development server::
 
   python manage.py runserver
+
+Compile front-end 
+
+  npm install 
+  npm run dev 
+
+
+Wagtail
+-------
+
+Create a superuser 
+
+  python manage.py createsuperuser 
+
+Log into the Wagtail admin and set up a site 
+
+  http://localhost:8000/admin/wagtail 
+
 
 Testing
 --------
@@ -115,3 +131,12 @@ Add Super User role to userabc
 postgres=# ALTER USER userabc WITH SUPERUSER;
 ALTER ROLE
 ```
+
+
+
+Front End
+--------
+
+- `nvm use 16`
+- `npm install`
+- `npm run build` or `npm run dev`

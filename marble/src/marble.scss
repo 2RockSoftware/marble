@@ -1,0 +1,180 @@
+/* Marble Stylesheet */
+
+@import 'variables';
+@import 'bootstrap-includes';
+
+
+//
+// Styles
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+:root {
+  --gutter: 1rem;
+
+  @include media-breakpoint-up(sm) {
+    font-size: ($font-size-root * 1.10);
+  }
+
+  @include media-breakpoint-up(lg) {
+    --gutter: 2rem;
+    font-size: ($font-size-root * 1.15);
+  } 
+  
+  @include media-breakpoint-up(xl) {
+    font-size: ($font-size-root * 1.35);
+  }
+}
+
+body {
+  background-color: $marble-gray__light;
+  font-size: inherit;
+}
+
+
+
+.marble-footer {
+  padding:  2rem var(--gutter);
+  background-color: $marble-gray__dark;
+  align-items: center;
+
+  h2 {
+    font-size: 1.75rem;
+    margin: 1.5rem 0;
+    text-align: center;
+
+    @include media-breakpoint-up(lg) {
+      font-size: 2.25rem;
+      text-align: left;
+    }
+  }
+
+  .marble-rock {
+    text-decoration: none;
+    color: $marble-gray__dark;
+    padding: 3rem 2rem;
+    font-size: 1.15rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  img {
+    filter: invert(1);
+    max-width: 10rem;
+  }
+
+  ul a { 
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+    letter-spacing: 1px;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+  }
+
+  .marble-footer-logo, 
+  p {
+    padding: 2rem 0;
+
+    @include media-breakpoint-up(md) {
+      width: 25%;
+    }
+
+    @include media-breakpoint-up(lg) {
+      width: 20%;
+    }
+  }
+
+  & + .marble-footer { 
+    padding-top: 0;
+  }
+}
+
+
+@import 'typography';
+
+// 
+// Components 
+
+.marble-rock {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+
+  ul {
+    padding: 0 10%;
+  }
+}
+
+.marble-rock-row {
+  @include media-breakpoint-up(xl) {
+    margin: 0 -3rem;
+  }
+}
+
+.marble-rock-wide {
+  width: 100%;
+}
+
+
+// 
+// Team 
+
+.marble-team-member {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+
+  h3 {
+    font-family: $marble-serif;
+    margin: 0;
+    font-weight: 700;
+  }
+
+  h4 {
+    font-weight: 400;
+    margin-bottom: 1rem;
+  }
+
+  img {
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+
+  p {
+    line-height: 1.75;
+  }
+}
+
+.marble-team-member.is-founder {
+  h3 {
+    font-size: 1.75rem;
+  }
+
+  h4 {
+    font-size: 1.5rem;
+  }
+}
+
+// 
+// Buttons 
+
+.btn {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.btn-outline-primary {
+  color: $marble-brown;
+}
+
+@import 'home';
+@import 'contact';
+@import 'careers';
+@import 'page';
