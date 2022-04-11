@@ -17,6 +17,22 @@
     <meta name="author" content="{% block meta-author %}{% endblock %}">
     <meta name="keywords" content="{% block meta-keywords %}{% endblock %}">
 
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="twitter:domain" content="tworock.io">
+    <meta property="twitter:url" content="{{ domain }}{{ request.get_full_path }}">
+    <meta name="twitter:title" content="{% if page.seo_title %}{{ page.seo_title }}{% else %}{{ page.title }}  - {{ current_site.site_name }}{% endif %}">
+    <meta name="twitter:description" content="{{ page.search_description }}">
+    <meta name="twitter:image" content="{% static 'images/two-rock-software-social.jpg' %}">
+
+
+    <!-- Facebook Meta Tags -->
+    <meta property="og:url" content="{{ domain }}{{ request.get_full_path }}">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="{% if page.seo_title %}{{ page.seo_title }}{% else %}{{ page.title }}  - {{ current_site.site_name }}{% endif %}">
+    <meta property="og:description" content="{{ page.search_description }}">
+    <meta property="og:image" content="{% static 'images/two-rock-software-social.jpg' %}">
+
     {% block extra-meta %}{% endblock %}
     {% block extra-css %}{% endblock %}
 
