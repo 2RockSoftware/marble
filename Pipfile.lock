@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "26545569018200ad0f4c9ebc38fbd71f4f7eb9e243c2798d20931ee9343e18f9"
+            "sha256": "2569f0bcbe5996c1fe651aa3b305a247e6cc7890315d4e901c5c8fb71b9f69d0"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -396,6 +396,14 @@
             ],
             "index": "pypi",
             "version": "==2.9.6"
+        },
+        "puput": {
+            "hashes": [
+                "sha256:0690c7a26c84a95193813e3ede243c39ce89ceb408fecb5a604e24ad256f1b83",
+                "sha256:61e2455ffbe0044f6ba05b1ec98accbccd3ec1ecd3396e94547324fb8fbb5caf"
+            ],
+            "index": "pypi",
+            "version": "==1.2.0"
         },
         "pycrypto": {
             "hashes": [
