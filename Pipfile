@@ -13,6 +13,7 @@ pylint = "*"
 coverage = "*"
 django-debug-toolbar = "*"
 pre-commit = "*"
+setuptools = "==59.5.0"
 
 [packages]
 uwsgi = "*"
