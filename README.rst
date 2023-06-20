@@ -18,7 +18,7 @@ Project Setup
 
 First clone the repository from BitBucket and switch to the new directory::
 
-  $ git clone git@bitbucket.org:[ORGANIZATION]/marble.git
+  $ git clone git@bitbucket.org:2RockSoftware/marble.git
   $ cd marble
 
 Next, create a virtual environment and install all of the requirements::
