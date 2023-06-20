@@ -3,6 +3,9 @@
   "version": "2.0.0",
   "private": true,
   "description": "Two Rock Software website",
+  "engines": {
+      "node": ">=16.0 <16.15.1"
+  },
   "scripts": {
     "dev": "webpack --mode development --watch; vue-cli-service serve /vue/contact-form/src/main.js",
     "build": "webpack --mode production; vue-cli-service build  /vue/contact-form/src/main.js",
