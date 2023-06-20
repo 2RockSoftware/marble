@@ -5,8 +5,8 @@ Below you will find basic setup and deployment instructions for the Marble
 project. To begin you should have the following applications installed on your
 local development system::
 
-- Python >= 3.8
-- Dev Tools (e.g. Ubuntu) `sudo apt-get install python-pip python-dev libpq-dev postgresql postgresql-contrib` _
+- Python == 3.10
+- Dev Tools (e.g. Ubuntu) `sudo apt-get install python-pip python3.10-dev libpq-dev postgresql postgresql-contrib` _
 - `pipenv the latest`_
 - Postgres >= 10
 - git >= 1.7
@@ -23,7 +23,7 @@ First clone the repository from BitBucket and switch to the new directory::
 
 Next, create a virtual environment and install all of the requirements::
 
-  (marble)$ pipenv shell --python 3.8
+  (marble)$ pipenv shell --python 3.10
   (marble)$ pipenv install --dev
 
 Now, create a local settings file and set your DJANGO_SETTINGS_MODULE to use it:::
