@@ -6,7 +6,6 @@
     display: block;
 
     img {
-        filter: invert(1);
         width: 5rem;
         
         @include media-breakpoint-up(md) {

@@ -16,7 +16,7 @@
             <div class="col-md-6">
                 <div class="marble-rock" style="background-image: url('{% static 'backgrounds/contact-rock.svg' %}');">
                     <p class="marble-contact-content">
-                        {{ page.content }}
+                        {{ page.content|striptags }}
                     </p>
                 </div>
             </div>

@@ -246,4 +246,7 @@ SILENCED_SYSTEM_CHECKS = ['captcha.recaptcha_test_key_error']
 
 # Wagtail settings
 WAGTAIL_SITE_NAME = 'Two Rock Software'
+WAGTAILADMIN_BASE_URL = "/admin/wagtail/"
 PUPUT_AS_PLUGIN = True
+
+DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'

@@ -7869,7 +7869,6 @@ h3, .h3 {
   display: block;
 }
 .marble-contact-nav img {
-  filter: invert(1);
   width: 5rem;
 }
 @media (min-width: 980px) {
@@ -7945,6 +7944,10 @@ h3, .h3 {
 
 .server-messages {
   min-height: 500px;
+}
+
+.marble-careers-nav img {
+  filter: invert(1);
 }
 
 .marble-careers-hero {

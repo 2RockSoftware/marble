@@ -1,5 +1,10 @@
 // 
 // Careers page 
+.marble-careers-nav {
+    img {
+        filter: invert(1);
+    }
+}
 
 .marble-careers-hero {
     padding: 2rem 0;
