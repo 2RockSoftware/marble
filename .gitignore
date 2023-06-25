@@ -11,5 +11,6 @@ devproject
 node_modules
 *.pyc
 *.css
+*.swp
 marble/static/build
 marble/static/contact-form
