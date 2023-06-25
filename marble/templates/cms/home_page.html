@@ -23,45 +23,6 @@
             <a href="/contact/" style="background-image: url('{% static 'backgrounds/rock-nav-4.svg' %}');">Contact</a>
         </nav>
     </header>
-    
-    {% if page.what_we_build_section %}
-    <section class="marble-home-build">
-        <div class="container"> 
-            {% for block in page.what_we_build_section %}
-                {% if block.block_type == 'heading' %}
-                    <h2>{{ block.value }}</h2>
-                {% elif block.block_type == 'subheading' %}
-                    <h3>{{ block.value }}</h3>
-                {% else %}
-                    {% include_block block %}
-                {% endif %}
-            {% endfor %}
-        </div>
-    </section>
-    {% endif %}
-   
-    {% if page.how_we_work_section %}
-    <section class="marble-home-how">
-        <div class="container">
-            {% for block in page.how_we_work_section %}
-                {% if block.block_type == 'heading' %}
-                    <h2>{{ block.value }}</h2>
-                {% elif block.block_type == 'subheading' %}
-                    <h3>{{ block.value }}</h3>
-                {% else %}
-                    {% include_block block %}
-                {% endif %}
-            {% endfor %}
-        </div>
-    </section>
-    {% endif %}
-
-   
-    <img srcset="{% static 'backgrounds/home-about-rocks.png' %} 1000w,
-                {% static 'backgrounds/home-about-rocks@2x.png' %} 2000w"
-        src="{% static 'backgrounds/home-about-rocks.png' %}" 
-        sizes="(max-width: 960px) 1000px, 2000px"
-        class="marble-rock-wide"/>
 
     <section class="marble-home-about" id="about">
         <div class="container">
@@ -76,8 +37,8 @@
                 {% endfor %}
                 </div>
             </div>
-            
-            {% comment %} 
+
+            {% comment %}
                 {% for member in page.team.all %}
                     {{ member }}
                 {% endfor %}
@@ -92,7 +53,7 @@
 
                     <p>Victor began doing Python development in 2008 because it afforded him the performance needed to meet his goals in developing mathematical analysis and modeling solutions. From there it made good sense to use Django starting in 2010 when he first began building practice management software for a law firm. Since then, he has worked with small and midsize development teams on projects from NGOs, startups, and small businesses. He also developed successful cloud-based trust accounting software for attorneys called Account Legal.</p>
                 </div>
-                
+
                 <div class="col-sm-5 offset-sm-2 col-lg-5 offset-lg-2 marble-team-member is-founder">
                     <h3>Peter Grandstaff</h3>
                     <h4>Founder</h4>
@@ -150,6 +111,44 @@
             </div>
         </div>
     </section>
+
+    <img srcset="{% static 'backgrounds/home-about-rocks.png' %} 1000w,
+                {% static 'backgrounds/home-about-rocks@2x.png' %} 2000w"
+        src="{% static 'backgrounds/home-about-rocks.png' %}" 
+        sizes="(max-width: 960px) 1000px, 2000px"
+        class="marble-rock-wide"/>
+
+    {% if page.what_we_build_section %}
+    <section class="">
+        <div class="container">
+            {% for block in page.what_we_build_section %}
+                {% if block.block_type == 'heading' %}
+                    <h2>{{ block.value }}</h2>
+                {% elif block.block_type == 'subheading' %}
+                    <h3>{{ block.value }}</h3>
+                {% else %}
+                    {% include_block block %}
+                {% endif %}
+            {% endfor %}
+        </div>
+    </section>
+    {% endif %}
+
+    {% if page.how_we_work_section %}
+    <section class="marble-home-how">
+        <div class="container">
+            {% for block in page.how_we_work_section %}
+                {% if block.block_type == 'heading' %}
+                    <h2>{{ block.value }}</h2>
+                {% elif block.block_type == 'subheading' %}
+                    <h3>{{ block.value }}</h3>
+                {% else %}
+                    {% include_block block %}
+                {% endif %}
+            {% endfor %}
+        </div>
+    </section>
+    {% endif %}
 
     <img srcset="{% static 'backgrounds/home-footer-start.jpg' %} 1000w,
                 {% static 'backgrounds/home-footer-start@2x.jpg' %} 2000w"

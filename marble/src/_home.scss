@@ -111,7 +111,7 @@
 
 .marble-home-build {
   position: relative;
-  padding: var(--gutter);
+  padding: 6rem var(--gutter);
 
   @include media-breakpoint-up(sm) {
     margin-top: -10rem;
@@ -154,7 +154,11 @@
 }
 
 .marble-home-about {
-  padding: 6rem var(--gutter);
+  margin-top: -5rem;
+
+  @include media-breakpoint-up(sm) {
+    margin-top: -15rem;
+  }
 
   h2 {
     line-height: 1;
